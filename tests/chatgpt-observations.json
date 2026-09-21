@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-21",
+  "entrypoint": "ChatGPT web via Chrome",
+  "model": null,
+  "record_type": "assistant observations from visible UI, not an independent evaluation",
+  "source": "fictional portrait generated in the same ChatGPT conversation; no user photographs uploaded",
+  "style_reference_uploaded": false,
+  "prompt_file": "prompts/chatgpt.md",
+  "prompt_sha256": "c1d3c724ab15932f1f134b1797c4872ac71f7992d03a27ba075ec746e53a82b7",
+  "cases": [
+    {
+      "case": "initial single-message workflow",
+      "result": "failed intended clarification behavior",
+      "input_suffix": "用刚刚生成的照片帮我做张头像。",
+      "observation": "Generated an avatar without asking actual usage; image remained photo-like. This was a superseded prompt."
+    },
+    {
+      "case": "revised design stage with explicit purpose",
+      "result": "observed",
+      "input_suffix": "用途：技术大会官网的演讲者头像。人物用本对话最初生成的虚构照片，画风半写实手绘，其他由你设计。",
+      "observation": "Returned a design plan, referenced the original synthetic photo, selected burgundy clothing and gray-blue background, and waited for the generation message."
+    },
+    {
+      "case": "revised generation stage",
+      "result": "image visibly generated",
+      "input": "按方案生成。用我提供的人物照片作为身份参考，有风格参考时只借鉴绘画语言。请直接交付图片，并按实际用途检查成片；只有确实检查过的项目才能说已通过。",
+      "observation": "Generated portrait with burgundy clothing and gray-blue painted background; still more photographic than bundled style anchor. No image-tool prompt or downloadable file exposed."
+    },
+    {
+      "case": "revised fresh-chat clarification",
+      "result": "observed",
+      "input_suffix": "我想把一张照片做成好看的头像。",
+      "response": "这张图主要用在哪里？",
+      "observation": "No image generated; this test lacked both a photo and a purpose."
+    }
+  ],
+  "limitations": [
+    "No real-photo upload or two-reference upload path tested",
+    "No independent human rating or short-prompt baseline",
+    "Native UI text entry introduced Markdown escaping and earlier malformed messages; fresh-chat clarification used a separate chat",
+    "No ChatGPT image files are presented as Codex artifacts or vice versa"
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "用途驱动的肖像设计"
+  short_description: "先明确照片用途，再由设计师与摄影师完成视觉方案、生成和审美检查"
+  default_prompt: "用 $editorial-avatar 根据我上传的照片与用途设计并生成肖像；需求不清楚时先问我，再完成创作。"

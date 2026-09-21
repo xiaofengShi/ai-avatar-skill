@@ -1,0 +1,9 @@
+{
+  "name": "editorial-avatar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"build:docs": "node scripts/build_docs.mjs", "check:docs": "node scripts/build_docs.mjs --check"},
+  "devDependencies": {"marked": "17.0.5"},
+  "engines": {"node": ">=20"}
+}

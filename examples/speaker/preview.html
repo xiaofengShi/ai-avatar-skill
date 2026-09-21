@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data: 'self'; style-src 'unsafe-inline'; base-uri 'none'">
+<title>头像裁切检查 · avatar.png</title><style>
+*{box-sizing:border-box}body{margin:0;background:#eceeeb;color:#202823;font:16px/1.6 system-ui,sans-serif}
+main{max-width:1080px;margin:auto;padding:clamp(12px,3vw,32px)}h1{font-size:clamp(23px,4vw,34px);line-height:1.2}
+h1,p,figcaption{overflow-wrap:anywhere}section{padding:16px;margin:20px 0;border-radius:12px;border:1px solid #cbd1ca}
+h2{font-size:18px;margin:0 0 20px}.light{background:#fff}.dark{background:#151b20;color:#f0f3f4;border-color:#343e45}
+.samples{display:flex;flex-wrap:wrap;align-items:end;gap:24px}figure{margin:0;text-align:center;max-width:100%}
+.avatar{display:block;object-fit:cover;object-position:center;border-radius:50%;max-width:100%}
+figcaption{margin-top:8px;font-size:14px}.original{display:block;width:min(100%,512px);height:auto}
+@media print{body{background:white}section{break-inside:avoid}.dark{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style></head><body><main><h1>头像裁切检查</h1><p>avatar.png · 原图未修改。图片以相对路径引用，离线分享时需保留图片与 HTML 的相对位置。</p>
+<p>以浏览器 100% 缩放查看。尺寸为 CSS 像素，窄于 312 px 的页面可能压缩最大样本。圆裁切采用居中 cover；真实平台可能允许不同取景。</p>
+<section class="light"><h2>浅色界面</h2><div class="samples"><figure><img src="avatar.png" width="40" height="40" alt="40 像素居中圆形裁切" class="avatar"><figcaption>40 px</figcaption></figure><figure><img src="avatar.png" width="64" height="64" alt="64 像素居中圆形裁切" class="avatar"><figcaption>64 px</figcaption></figure><figure><img src="avatar.png" width="128" height="128" alt="128 像素居中圆形裁切" class="avatar"><figcaption>128 px</figcaption></figure><figure><img src="avatar.png" width="256" height="256" alt="256 像素居中圆形裁切" class="avatar"><figcaption>256 px</figcaption></figure></div></section><section class="dark"><h2>深色界面</h2><div class="samples"><figure><img src="avatar.png" width="40" height="40" alt="40 像素居中圆形裁切" class="avatar"><figcaption>40 px</figcaption></figure><figure><img src="avatar.png" width="64" height="64" alt="64 像素居中圆形裁切" class="avatar"><figcaption>64 px</figcaption></figure><figure><img src="avatar.png" width="128" height="128" alt="128 像素居中圆形裁切" class="avatar"><figcaption>128 px</figcaption></figure><figure><img src="avatar.png" width="256" height="256" alt="256 像素居中圆形裁切" class="avatar"><figcaption>256 px</figcaption></figure></div></section><section class="light"><h2>完整原图</h2><img class="original" src="avatar.png" alt="未裁切的完整头像"></section>
+<p>检查：小尺寸能否认出人物；发型、眼镜是否被误裁；表情和头颈肩是否自然；深浅底色下是否清晰。预览生成不代表审美检查通过。</p>
+</main></body></html>

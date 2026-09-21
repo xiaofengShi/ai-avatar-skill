@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {
+      "path": "skills/editorial-avatar/references/style-anchor.png",
+      "sha256": "63c59d3ce704408feff76ba1b2fcedea3c688c9ff3a62eee157ce1097678e135"
+    },
+    {
+      "path": "skills/editorial-avatar/references/style-anchor.prompt.txt",
+      "sha256": "6dde854032260361a178cb83914c0637027080ca09a3d259328fa4f8b361a6b7"
+    },
+    {
+      "path": "examples/developer/source.png",
+      "sha256": "8429e5704d0ec7aa9f1ee2ef4fd040d2a3b6f3c7789d3eb6843467e03a7197db"
+    },
+    {
+      "path": "examples/developer/source.prompt.txt",
+      "sha256": "6165607328e8147698a0f28bedade63759028e9b0e8b442ee5cde33540da3ec2"
+    },
+    {
+      "path": "examples/developer/avatar.png",
+      "sha256": "ba2f143fd338241371489a77a3a3afc19e18e242bb656faba3aee6007db98a02"
+    },
+    {
+      "path": "examples/developer/generation.prompt.txt",
+      "sha256": "2cbba74415e4869f0b9fc9919c65eaaa005fddec0a54e48b1a9f3170dc26ba74"
+    },
+    {
+      "path": "examples/developer/request.txt",
+      "sha256": "8f0a6ef4f11d8ee416380b912ddb610a6a19702078209199efe1f422ab0f1893"
+    },
+    {
+      "path": "examples/speaker/source.png",
+      "sha256": "ad6b580f01ca94a9ce7ceb897923a2a646f14c990c0fe60c0a5e857bd8f69901"
+    },
+    {
+      "path": "examples/speaker/source.prompt.txt",
+      "sha256": "8bca9451593564af60f7518c788707459f0223b7ea974f666f0d453762cdf952"
+    },
+    {
+      "path": "examples/speaker/avatar.png",
+      "sha256": "482efbd2bfef50789c2f273d3239a482b6ba76ecd2edc41e942faf2d7669b001"
+    },
+    {
+      "path": "examples/speaker/generation.prompt.txt",
+      "sha256": "e2ecf3df10fd20e6483b8bec96fb94efc7497954f5eeac61999a8bf435ad2fe2"
+    },
+    {
+      "path": "examples/speaker/request.txt",
+      "sha256": "b30ce5362065c1c6bd3a9dc84bd87042e03d2482b38a385df4b9999a573a4022"
+    }
+  ],
+  "runs": [
+    {
+      "id": "style-anchor",
+      "date": "2026-09-21",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "skills/editorial-avatar/references/style-anchor.prompt.txt",
+      "output": "skills/editorial-avatar/references/style-anchor.png",
+      "inputs": [],
+      "synthetic": true
+    },
+    {
+      "id": "developer-source",
+      "date": "2026-09-21",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/developer/source.prompt.txt",
+      "output": "examples/developer/source.png",
+      "inputs": [],
+      "synthetic": true
+    },
+    {
+      "id": "developer-avatar",
+      "date": "2026-09-21",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/developer/generation.prompt.txt",
+      "output": "examples/developer/avatar.png",
+      "inputs": [
+        {
+          "role": "style",
+          "path": "skills/editorial-avatar/references/style-anchor.png"
+        },
+        {
+          "role": "identity",
+          "path": "examples/developer/source.png"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "speaker-source",
+      "date": "2026-09-21",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/speaker/source.prompt.txt",
+      "output": "examples/speaker/source.png",
+      "inputs": [],
+      "synthetic": true
+    },
+    {
+      "id": "speaker-avatar",
+      "date": "2026-09-21",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/speaker/generation.prompt.txt",
+      "output": "examples/speaker/avatar.png",
+      "inputs": [
+        {
+          "role": "style",
+          "path": "skills/editorial-avatar/references/style-anchor.png"
+        },
+        {
+          "role": "identity",
+          "path": "examples/speaker/source.png"
+        }
+      ],
+      "synthetic": true
+    }
+  ]
+}
