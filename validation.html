@@ -21,7 +21,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <h2>示例审片</h2>
 <h3>真实旅行照片：用户认可</h3>
 <p>用户先提供街头旅行照片，在用途澄清后要求“先做一个旅行氛围的吧”。使用已安装的 editorial-avatar skill：人物照片提供身份与场景，早期对话画风图提供绘画语言。该画风图未获再分发授权，只在 manifest.json 的 unpublished_inputs 中记录哈希和输入位置；它不是仓库内的公共风格图。此案例与前五组的参考条件不同。</p>
-<p>第一次图像调用因 JPEG 的 invalid_image_file 错误未生成结果。将原照转为 PNG 后，用同一份简报调用成功，未作图像质量重试或候选筛选。实际简报见 <a href="examples/travel/generation.prompt.txt">generation.prompt.txt</a>，人物源图与成片见 README 对照表。公开源图已移除 EXIF、文本等元数据，并核对 PNG 的 IDAT 图像数据未变化。</p>
+<p>第一次图像调用因 JPEG 的 invalid_image_file 错误未生成结果。将原照转为 PNG 后，用同一份简报调用成功，未作图像质量重试或候选筛选。实际简报见 <a href="examples/travel/generation.prompt.txt">generation.prompt.txt</a>，人物源图与成片见<a href="https://xiaofengshi.github.io/editorial-avatar/#examples">项目主页案例区</a>。公开源图已移除 EXIF、文本等元数据，并核对 PNG 的 IDAT 图像数据未变化。</p>
 <p>助手原图检查：侧脸方向、眼镜、短发与背包保留；人物占比提高，路牌、绿荫与柔和日光形成旅行环境肖像。街景、建筑、路牌位置和细节经重构，图中的指路箭头不应用于导航。该图按竖版环境肖像查看，没有作头像圆裁切检查。</p>
 <p>用户评价“不错”，并要求将此案例加入 GitHub README，状态为“已生成、助手检查、该用户认可并授权公开”。这是单个真实案例，不能推出身份精确还原、跨人物稳定性或模型优越性。</p>
 <h3>开源社区头像：Codex</h3>
@@ -76,7 +76,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <h3>已检查与待验证范围</h3>
 <ul>
 <li>ChatGPT 真实照片上传路径、双图风格参考与后续编辑；当前只完成虚构源图的基本交互实测。</li>
-<li>README 与头像预览已在 390 CSS 像素宽的浏览器 iframe 中查看。六组示例大表格另完成了桌面显示与窄屏横向滚动检查，能滚动看到成片列；这不是实体手机测试。打印效果尚未查看。</li>
+<li>项目主页已在 1280 px 桌面视口与 390 px 手机视口检查：六组案例在桌面为双列网格、手机为单列，页面无横向溢出，原图与结果尺寸相同。12 张案例图片在本地浏览器正常加载；试验记录可用键盘展开。核心内容不依赖 JavaScript。此前头像预览另在 390 CSS 像素 iframe 中检查过；这些不是实体手机测试。打印效果尚未查看。</li>
 <li>内嵌图像字节与相对路径已通过脚本测试，浏览器视觉检查使用本地 HTTP 页面。尝试打开 file:// 页面时原生浏览器自动化未完成导航，因此直接双击文件的离线显示尚未实测。</li>
 <li>独立真人审美评价，以及需要时的短 prompt 对照。</li>
 </ul>

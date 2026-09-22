@@ -1,111 +1,32 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Editorial Avatar</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f8f5;color:#25312e;font:16px/1.75 system-ui,sans-serif}
-main{max-width:1040px;margin:auto;padding:clamp(16px,4vw,48px);overflow-wrap:anywhere}
-h1{font-size:clamp(30px,5vw,48px);line-height:1.15}h2{margin-top:36px;padding-top:18px;border-top:1px solid #cbd4cb;font-size:24px}
-h3{font-size:19px}a{color:#1b6261;text-underline-offset:3px}a:focus-visible{outline:3px solid #246d70;outline-offset:3px}
-img{max-width:100%;height:auto;display:block;margin:12px auto;border-radius:8px}.table-scroll{overflow-x:auto}.table-scroll:focus-visible{outline:3px solid #246d70}table{border-collapse:collapse;width:100%;min-width:760px;table-layout:fixed}
-td,th{padding:8px;text-align:left;border-bottom:1px solid #cbd4cb;vertical-align:top}td img{width:220px;max-width:100%;height:auto}
-pre{overflow:auto;padding:18px;background:#e8eee9;border-radius:8px;font-size:14px;line-height:1.6}code{font-family:ui-monospace,monospace}li{margin:8px 0}
-blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;background:#edf1eb}
-@media(max-width:480px){td,th{padding:4px;font-size:14px}}
-@media print{body{background:white}main{padding:0}h2,h3{break-after:avoid}.table-scroll{overflow:visible}table{min-width:0;font-size:12px}tr{break-inside:avoid}img{max-height:85mm;width:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}}
-</style></head><body><main><p><strong><a href="https://xiaofengshi.github.io/editorial-avatar/">项目主页 · 在线查看示例与头像预览</a></strong></p>
-<h1>Editorial Avatar</h1>
-<p><a href="https://github.com/xiaofengShi/editorial-avatar">GitHub · xiaofengShi/editorial-avatar</a> · <a href="https://github.com/xiaofengShi/editorial-avatar/issues">反馈问题</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/validation.html">验证记录</a></p>
-<p>给一张照片，说明要用在哪里，让 AI 作为设计师与摄影师完成肖像设计。</p>
-<p>适用于 ChatGPT 用户和具备图像生成能力的 Codex 用户。默认半写实手绘，支持其他画风与后续修改；用途不清楚时先问，明确后由助手完成造型、光线、色彩与构图。</p>
-<p>这套创作流程与工具包帮助你减少重复交代、保存设计原则，并提供可复查示例和真实尺寸预览。</p>
-<h2>先看示例</h2>
-<p><strong>6 组示例，一张表对照。</strong> 旅行插画来自用户授权公开的真实照片，成片已获该用户认可；其余 5 组覆盖 2 个 AI 生成的虚构人物。所有成片均由 Codex 内置图像工具生成。点击图片可查看原尺寸；窄屏可横向滚动表格。</p>
-<div class="table-scroll" role="region" aria-label="对照表，可横向滚动" tabindex="0"><table>
-<thead>
-<tr>
-<th>用途与要求</th>
-<th>输入照片 / 编辑基底</th>
-<th>生成结果</th>
-<th>设计、观察与记录</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>旅行氛围插画</strong><br>生活照 → 环境肖像<br>保留侧脸、眼镜与旅行感</td>
-<td><a href="examples/travel/source.png"><img src="examples/travel/source.png" alt="真实旅行照片" width="220"></a></td>
-<td><a href="examples/travel/illustration.png"><img src="examples/travel/illustration.png" alt="用户认可的旅行氛围插画" width="220"></a></td>
-<td><strong>用户已认可并授权公开。</strong> 拉近人物，以路牌、绿荫与柔和日光交代旅行场景。街景经过重构，不是现场复原。<br><a href="examples/travel/request.txt">请求</a> · <a href="examples/travel/generation.prompt.txt">实际指令</a></td>
-</tr>
-<tr>
-<td><strong>GitHub / Hugging Face</strong><br>自然、容易接近<br>保留眼镜</td>
-<td><a href="examples/developer/source.png"><img src="examples/developer/source.png" alt="虚构男性原始照片" width="220"></a></td>
-<td><a href="examples/developer/avatar.png"><img src="examples/developer/avatar.png" alt="半写实社区头像" width="220"></a></td>
-<td>墨蓝便装配浅蓝灰背景，保留灰白短发与年龄感。皮肤纹理仍偏细密。<br><a href="examples/developer/request.txt">请求</a> · <a href="examples/developer/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/developer/preview.html">圆裁切预览</a></td>
-</tr>
-<tr>
-<td><strong>大会演讲者介绍</strong><br>保留年龄、肤色<br>与短卷发</td>
-<td><a href="examples/speaker/source.png"><img src="examples/speaker/source.png" alt="虚构女性原始照片" width="220"></a></td>
-<td><a href="examples/speaker/avatar.png"><img src="examples/speaker/avatar.png" alt="梅紫外套的演讲者头像" width="220"></a></td>
-<td>梅紫外套配灰紫背景，神态平静亲和。五官略有重绘。<br><a href="examples/speaker/request.txt">请求</a> · <a href="examples/speaker/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/speaker/preview.html">圆裁切预览</a></td>
-</tr>
-<tr>
-<td><strong>只去掉眼镜</strong><br>保留构图、神态<br>服装、背景和画风</td>
-<td><a href="examples/developer/avatar.png"><img src="examples/developer/avatar.png" alt="带眼镜的编辑基底" width="220"></a></td>
-<td><a href="examples/remove-glasses/avatar.png"><img src="examples/remove-glasses/avatar.png" alt="去眼镜的社区头像" width="220"></a></td>
-<td>镜框、鼻托与镜腿已去除，整体设计接近原版。眼周存在补绘，不是遮挡细节的真实还原。<br><a href="examples/remove-glasses/request.txt">请求</a> · <a href="examples/remove-glasses/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/remove-glasses/preview.html">圆裁切预览</a></td>
-</tr>
-<tr>
-<td><strong>深色研究团队主页</strong><br>同一人物适配新用途<br>保留眼镜和年龄感</td>
-<td><a href="examples/developer/source.png"><img src="examples/developer/source.png" alt="用于团队头像的虚构源照片" width="220"></a></td>
-<td><a href="examples/researcher/avatar.png"><img src="examples/researcher/avatar.png" alt="深绿色研究团队头像" width="220"></a></td>
-<td>深绿便装、蓝绿背景与柔和侧光。40 px 下肩部对比偏弱，脸部仍可辨；不能据此认为优于社区版。<br><a href="examples/researcher/request.txt">请求</a> · <a href="examples/researcher/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/researcher/preview.html">圆裁切预览</a></td>
-</tr>
-<tr>
-<td><strong>微笑与姿态修正</strong><br>头颈肩整体协调<br>保留微笑、服装与配色</td>
-<td><a href="examples/speaker/avatar.png"><img src="examples/speaker/avatar.png" alt="表情修改前的演讲者头像" width="220"></a></td>
-<td><a href="examples/speaker-smile/avatar-v2.png"><img src="examples/speaker-smile/avatar-v2.png" alt="头颈肩整体调整后的修正版，待用户确认" width="220"></a></td>
-<td>首版被用户指出头身方向不协调；重作一次，减小歪头幅度并调整肩线、领口。<strong>修正版待用户确认。</strong><br><a href="examples/speaker-smile/avatar.png">首版问题图</a> · <a href="examples/speaker-smile/feedback.txt">反馈</a> · <a href="examples/speaker-smile/correction.prompt.txt">修正指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/speaker-smile/preview-v2.html">圆裁切预览</a></td>
-</tr>
-</tbody></table></div>
-<p>示例完成于 2026-09-21 至 2026-09-22。五组虚构人物案例首版均一次生成；其中微笑案例被用户指出姿态问题，已追加一次修正并保留首版记录；旅行照片首次因 JPEG 读取失败未出图，转为 PNG 后用相同简报生成一张成片。旅行版使用了早期对话的画风参考，该参考未获再分发授权、未收入仓库，并非本项目附带的公共风格图。</p>
-<p>这些是助手按 skill 流程设计简报后执行的生成与编辑案例，尚未作独立真人评审或同条件重复测试；一位用户认可一张图不代表稳定性验证。完整输入分工、审片观察与边界见 <a href="VALIDATION.md">验证记录</a> 和 <a href="ASSETS.md">素材说明</a>。</p>
-<h2>ChatGPT：复制即可开始</h2>
-<ol>
-<li>打开 <a href="prompts/chatgpt.md">ChatGPT prompt</a>，复制“方案阶段”代码块。</li>
-<li>在支持图像生成的 ChatGPT 对话中粘贴，附上照片与用途，例如：“用于 GitHub 和 Hugging Face，保留眼镜，其他由你设计。”</li>
-<li>想靠近示例画风，可同时附上 <a href="skills/editorial-avatar/references/style-anchor.png">风格参考图</a>，明确标注它只提供画风。只附人物照片也可以，但文字定义风格可能产生更大变化。</li>
-<li>看过方案后发送第二条“按方案生成”代码块，取得图像。在认可的结果上继续要求修改，例如：“保留这版的构图和服装，只去掉眼镜。”</li>
-</ol>
-<p>ChatGPT 入口分成方案、生成两条消息，避免图像请求跳过用途澄清。未说明用途时，预期先问用途；明确后由助手设计。Codex 入口在用途明确后连续执行设计与生成。ChatGPT 无法凭本地文件路径读取照片，需要实际附图。图像生成、上传与编辑能力由你的账户及当前界面提供；本项目不提供生成额度。<a href="https://help.openai.com/en/articles/11084440">官方图像使用说明</a>。</p>
-<h2>Codex：直接激活 skill</h2>
-<p>已安装后，在 Codex 输入框中选择 <code>editorial-avatar</code>，附上照片并说明用途；也可以直接发送：</p>
-<pre><code class="language-text">$editorial-avatar 这张图用于 GitHub 和 Hugging Face 的头像，保留眼镜，其余由你设计。
-</code></pre>
-<p>激活后由 Codex 读取 skill，完成用途澄清、肖像设计、图像生成与头像预览。日常使用只需照片和需求，无需手动运行 Python 或复制文件。</p>
-<p><strong>首次使用、尚未安装时</strong>，先在 Codex 中调用安装 skill：</p>
-<pre><code class="language-text">$skill-installer 请安装 https://github.com/xiaofengShi/editorial-avatar/tree/main/skills/editorial-avatar 中的 skill。
-</code></pre>
-<p>安装完成后，在下一轮对话选择或输入 <code>$editorial-avatar</code> 使用。已经安装的用户直接激活即可。安装和调用是两个步骤，仓库链接本身不会自动注册 skill。</p>
-<p>此 skill 需要当前 Codex 环境已提供图像生成能力。缺少该能力时，助手会说明限制并提供创作简报。调用方式见 <a href="https://learn.chatgpt.com/docs/build-skills">Codex skills 文档</a>。</p>
-<h2>检查小尺寸与圆形裁切</h2>
-<p>Codex skill 会调用附带的预览工具。你也可以在对话中要求：“检查这版头像的小尺寸和圆形裁切，并给我预览。”</p>
-<p><a href="https://xiaofengshi.github.io/editorial-avatar/examples/developer/preview.html"><img src="examples/developer/preview-screenshot.png" alt="头像预览实际截图：浅色与深色背景下的 40、64、128、256 px 圆形裁切"></a></p>
-<p>上图为虚构人物示例的实际预览截图。截图在 README 中会缩放；检查真实 CSS 尺寸时，请<a href="https://xiaofengshi.github.io/editorial-avatar/examples/developer/preview.html">打开完整预览</a>并保持浏览器 100% 缩放。</p>
-<p>用浏览器打开生成的 HTML，以 100% 缩放查看。包含 40、64、128、256 CSS 像素的圆形裁切、深浅底色与完整原图；图片内嵌，可离线分享。它不修改原图、不上传文件，也不会自动判断好不好看。生成的预览包含原始图片数据，分享预览等于分享图片。已有输出默认拒绝覆盖；需要替换时添加 <code>--force</code>。</p>
-<p>README 中的在线预览链接通过 GitHub Pages 展示；GitHub 仓库中的 HTML 文件页只显示源码。离线查看时下载仓库，用浏览器打开对应 HTML。</p>
-<p>仓库内的示例预览使用 <code>--linked</code> 相对引用原图，避免在 Git 中重复保存大块图片数据。该模式离线使用时需保留 HTML 与图片的相对位置；默认不加此选项时仍生成独立的内嵌版。</p>
-<h2>维护与贡献</h2>
-<p>核心设计逻辑只维护在 <a href="skills/editorial-avatar/references/workflow.md">workflow.md</a>。ChatGPT prompt 从它生成，Codex 直接读取它；不要手工修改生成文件。</p>
-<p>以下命令供维护者验证工具包，普通用户通过上述 skill 入口使用。Python 工具只依赖标准库，维护检查要求 Python 3.9+。单独调试头像预览时可运行：</p>
-<pre><code class="language-bash">python3 skills/editorial-avatar/scripts/preview_avatar.py avatar.png --output preview.html
-</code></pre>
-<pre><code class="language-bash">python3 scripts/build_prompt.py
-python3 scripts/build_prompt.py --check
-python3 -m unittest discover -s tests -v
-python3 scripts/check_package.py
-</code></pre>
-<p>README 与验证记录是 Markdown 事实源。HTML 阅读版通过 Node 20+ 与开发依赖 <code>marked</code> 生成，普通使用不需要安装这些依赖。GitHub Pages 从 <code>main</code> 分支根目录发布已生成的 HTML，<code>.nojekyll</code> 保留静态文件的原始路径；更新文档后应重新生成 HTML 并一并提交：</p>
-<pre><code class="language-bash">npm ci
-npm run build:docs
-npm run check:docs
-</code></pre>
-<p>贡献示例时提交用途、输入分工、实际指令、未挑选的试验结果及具体问题；只提交你有权公开的素材。区分工具已生成、助手审片和用户认可，不把失败图删掉后宣称稳定。涉及质量提升的主张应增加同输入、同模型条件与相同重试预算的简短 prompt 对照。</p>
-<p>当前完成了少量虚构人物测试、一组真实旅行照片案例与基本交互测试，尚无证据证明画质优于简短 prompt 或能够稳定出片，完整边界见 <a href="VALIDATION.md">验证记录</a>。</p>
-<h2>许可与素材</h2>
-<p>代码、prompt 与文档采用 <a href="LICENSE">MIT License</a>。本仓库附带的 AI 生成虚构素材可随项目使用与再分发，来源及适用范围见 <a href="ASSETS.md">素材说明</a>。旅行案例仅获本仓库示例展示授权，不适用 MIT 或虚构素材的再分发许可。许可也不覆盖用户另行上传的照片。</p>
-</main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editorial Avatar · 肖像案例展厅</title>
+<meta name="description" content="Editorial Avatar 的肖像设计案例、原图与结果对照、小尺寸裁切预览。适用于 Codex 和 ChatGPT。">
+<style>
+:root{--paper:#f7f5f0;--ink:#292a26;--muted:#62645c;--line:#d8d7ce;--accent:#8b4638;--white:#fff;--panel:#efeee8}
+*{box-sizing:border-box}html{scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.8 system-ui,-apple-system,sans-serif}a{color:var(--accent);text-underline-offset:4px}a:hover{text-decoration-thickness:2px}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}img{max-width:100%;height:auto}p{margin:16px 0}strong{font-weight:650}.skip{position:absolute;left:16px;top:-100px;background:var(--white);padding:12px;z-index:2}.skip:focus{top:12px}
+.site-header,main,footer{max-width:1280px;margin:auto;padding-inline:clamp(20px,5vw,64px)}.site-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:22px;border-bottom:1px solid var(--line)}.brand{text-decoration:none;color:var(--ink);font-size:18px;font-weight:750;letter-spacing:-.5px}.brand span{color:var(--accent)}nav{display:flex;align-items:center;flex-wrap:wrap;gap:8px 24px}nav a{display:inline-flex;align-items:center;gap:7px;min-height:44px;text-decoration:none;font-size:14px;font-weight:600}.icon{width:18px;height:18px;vertical-align:middle}.repo{border:1px solid var(--line);border-radius:6px;padding:0 14px;background:var(--white)}
+.hero{padding:56px 0 36px;border-bottom:1px solid var(--line)}.hero .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--accent);font-weight:700;margin:0 0 20px}.hero h1{font-family:Georgia,'Songti SC',serif;font-size:clamp(32px,4vw,54px);font-weight:500;letter-spacing:-1px;line-height:1.3;max-width:840px;margin:0 0 22px}.hero .intro{color:var(--muted);max-width:740px;font-size:17px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.actions a{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;min-height:44px;border:1px solid var(--accent);border-radius:5px;text-decoration:none;font-size:14px;font-weight:650}.actions .primary{background:var(--accent);color:white}
+h2{font-size:26px;line-height:1.4;letter-spacing:-.5px;margin:44px 0 16px}main>p{max-width:1000px;color:var(--muted)}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 28px;margin:28px 0 40px}.case{min-width:0;border-top:2px solid var(--ink);padding-top:16px}.case header{display:flex;gap:14px;align-items:baseline;min-height:108px}.case-number{font-size:12px;color:var(--accent);font-variant-numeric:tabular-nums}.case h3{font-size:19px;line-height:1.6;margin:0}.case h3 br{display:none}.case h3 strong{display:block}.brief{font-size:14px;color:var(--muted);line-height:1.6}.brief br{display:block!important}.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pair figure{margin:0;min-width:0}.pair figure>a{display:block;background:var(--panel);overflow:hidden;border-radius:4px}.pair img{display:block;width:100%;aspect-ratio:1;object-fit:contain;margin:0}.case:first-child .pair img{aspect-ratio:3/4}.pair figcaption{font-size:12px;color:var(--muted);margin-top:7px;letter-spacing:.5px}.observation{font-size:14px;line-height:1.8;margin-top:14px}.observation>a{display:inline-block;min-height:32px;padding-block:3px}.observation strong{color:var(--accent)}
+#preview{border-top:1px solid var(--line);padding-top:34px}.preview-shot{display:block;max-width:720px;margin:24px 0}.preview-shot img{display:block;width:100%;border:1px solid var(--line);border-radius:8px}#start{border-top:1px solid var(--line);padding-top:34px}footer{margin-top:56px;padding-block:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:13px}footer a{color:inherit}details{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:14px}summary{cursor:pointer;font-weight:650;color:var(--ink);min-height:44px;padding-top:8px}details p{max-width:980px}
+@media(max-width:760px){.gallery{grid-template-columns:1fr;gap:32px}.site-header{align-items:flex-start;flex-direction:column;gap:6px;padding-block:14px}nav{gap:4px 18px}.hero{padding:30px 0}.case header{min-height:0;padding-bottom:16px}footer{flex-direction:column}.pair{gap:8px}h2{font-size:24px}.hero .intro{font-size:16px}}
+@media print{body{background:white}.site-header nav,.actions,.skip{display:none}.hero{padding:12px 0}.gallery{display:block}.case{break-inside:avoid;margin-bottom:24px}.pair{max-width:560px}details{display:block}details::details-content{content-visibility:visible}a{color:inherit}footer{margin-top:20px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到案例内容</a>
+<header class="site-header"><a class="brand" href="./">Editorial<span> Avatar</span></a><nav aria-label="主导航"><a href="#examples">案例对照</a><a href="#preview">裁切预览</a><a href="https://github.com/xiaofengShi/editorial-avatar#readme">使用文档 ↗</a><a class="repo" href="https://github.com/xiaofengShi/editorial-avatar"><img class="icon" src="assets/icons/code.svg" alt="">GitHub ↗</a></nav></header>
+<main id="main"><section class="hero"><p class="eyebrow">Editorial Avatar / 案例展厅</p><h1>从一张照片，到适合你的肖像。</h1>
+<p class="intro">同一张照片，可以服务不同的用途。这里展示用途如何影响构图、服装、配色，以及一次修改如何改变结果。</p>
+<div class="actions"><a class="primary" href="#examples">浏览案例 ↓</a><a href="https://github.com/xiaofengShi/editorial-avatar#readme">开始使用 ↗</a></div></section><h2 id="examples">案例对照</h2><p><strong>6 组示例，按用途看设计。</strong> 旅行插画来自用户授权公开的真实照片，成片已获该用户认可；其余 5 组覆盖 2 个 AI 生成的虚构人物。所有成片均由 Codex 内置图像工具生成。每组原图与结果等大展示，点击图片可查看原尺寸。</p>
+<div class="gallery"><article class="case"><header><span class="case-number">01</span><div><h3><strong>旅行氛围插画</strong></h3><div class="brief">生活照 → 环境肖像<br>保留侧脸、眼镜与旅行感</div></div></header><div class="pair"><figure><a href="examples/travel/source.png"><img loading="lazy" decoding="async" src="examples/travel/source.png" alt="真实旅行照片" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/travel/illustration.png"><img loading="lazy" decoding="async" src="examples/travel/illustration.png" alt="用户认可的旅行氛围插画" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation"><strong>用户已认可并授权公开。</strong> 拉近人物，以路牌、绿荫与柔和日光交代旅行场景。街景经过重构，不是现场复原。<br><a href="examples/travel/request.txt">请求</a> · <a href="examples/travel/generation.prompt.txt">实际指令</a></div></article><article class="case"><header><span class="case-number">02</span><div><h3><strong>GitHub / Hugging Face</strong></h3><div class="brief">自然、容易接近<br>保留眼镜</div></div></header><div class="pair"><figure><a href="examples/developer/source.png"><img loading="lazy" decoding="async" src="examples/developer/source.png" alt="虚构男性原始照片" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/developer/avatar.png"><img loading="lazy" decoding="async" src="examples/developer/avatar.png" alt="半写实社区头像" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">墨蓝便装配浅蓝灰背景，保留灰白短发与年龄感。皮肤纹理仍偏细密。<br><a href="examples/developer/request.txt">请求</a> · <a href="examples/developer/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/developer/preview.html">圆裁切预览</a></div></article><article class="case"><header><span class="case-number">03</span><div><h3><strong>大会演讲者介绍</strong></h3><div class="brief">保留年龄、肤色<br>与短卷发</div></div></header><div class="pair"><figure><a href="examples/speaker/source.png"><img loading="lazy" decoding="async" src="examples/speaker/source.png" alt="虚构女性原始照片" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/speaker/avatar.png"><img loading="lazy" decoding="async" src="examples/speaker/avatar.png" alt="梅紫外套的演讲者头像" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">梅紫外套配灰紫背景，神态平静亲和。五官略有重绘。<br><a href="examples/speaker/request.txt">请求</a> · <a href="examples/speaker/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/speaker/preview.html">圆裁切预览</a></div></article><article class="case"><header><span class="case-number">04</span><div><h3><strong>只去掉眼镜</strong></h3><div class="brief">保留构图、神态<br>服装、背景和画风</div></div></header><div class="pair"><figure><a href="examples/developer/avatar.png"><img loading="lazy" decoding="async" src="examples/developer/avatar.png" alt="带眼镜的编辑基底" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/remove-glasses/avatar.png"><img loading="lazy" decoding="async" src="examples/remove-glasses/avatar.png" alt="去眼镜的社区头像" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">镜框、鼻托与镜腿已去除，整体设计接近原版。眼周存在补绘，不是遮挡细节的真实还原。<br><a href="examples/remove-glasses/request.txt">请求</a> · <a href="examples/remove-glasses/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/remove-glasses/preview.html">圆裁切预览</a></div></article><article class="case"><header><span class="case-number">05</span><div><h3><strong>深色研究团队主页</strong></h3><div class="brief">同一人物适配新用途<br>保留眼镜和年龄感</div></div></header><div class="pair"><figure><a href="examples/developer/source.png"><img loading="lazy" decoding="async" src="examples/developer/source.png" alt="用于团队头像的虚构源照片" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/researcher/avatar.png"><img loading="lazy" decoding="async" src="examples/researcher/avatar.png" alt="深绿色研究团队头像" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">深绿便装、蓝绿背景与柔和侧光。40 px 下肩部对比偏弱，脸部仍可辨；不能据此认为优于社区版。<br><a href="examples/researcher/request.txt">请求</a> · <a href="examples/researcher/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/researcher/preview.html">圆裁切预览</a></div></article><article class="case"><header><span class="case-number">06</span><div><h3><strong>微笑与姿态修正</strong></h3><div class="brief">头颈肩整体协调<br>保留微笑、服装与配色</div></div></header><div class="pair"><figure><a href="examples/speaker/avatar.png"><img loading="lazy" decoding="async" src="examples/speaker/avatar.png" alt="表情修改前的演讲者头像" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/speaker-smile/avatar-v2.png"><img loading="lazy" decoding="async" src="examples/speaker-smile/avatar-v2.png" alt="头颈肩整体调整后的修正版，待用户确认" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">首版被用户指出头身方向不协调；重作一次，减小歪头幅度并调整肩线、领口。<strong>修正版待用户确认。</strong><br><a href="examples/speaker-smile/avatar.png">首版问题图</a> · <a href="examples/speaker-smile/feedback.txt">反馈</a> · <a href="examples/speaker-smile/correction.prompt.txt">修正指令</a> · <a href="https://xiaofengshi.github.io/editorial-avatar/examples/speaker-smile/preview-v2.html">圆裁切预览</a></div></article></div><details><summary>试验过程与已知限制</summary><p>示例完成于 2026-09-21 至 2026-09-22。五组虚构人物案例首版均一次生成；其中微笑案例被用户指出姿态问题，已追加一次修正并保留首版记录；旅行照片首次因 JPEG 读取失败未出图，转为 PNG 后用相同简报生成一张成片。旅行版使用了早期对话的画风参考，该参考未获再分发授权、未收入仓库，并非本项目附带的公共风格图。</p>
+<p>这些是助手按 skill 流程设计简报后执行的生成与编辑案例，尚未作独立真人评审或同条件重复测试；一位用户认可一张图不代表稳定性验证。完整输入分工、审片观察与边界见 <a href="validation.html">验证记录</a> 和 <a href="https://github.com/xiaofengShi/editorial-avatar/blob/main/ASSETS.md">素材说明</a>。</p>
+</details><h2 id="preview">小尺寸，也值得认真看</h2><p><a class="preview-shot" href="examples/developer/preview.html"><img src="examples/developer/preview-screenshot.png" alt="头像预览实际截图：浅色与深色背景下的 40、64、128、256 px 圆形裁切"></a></p>
+<p>上图为虚构人物示例的实际预览截图。截图会随页面宽度缩放；检查真实 CSS 尺寸时，请<a href="https://xiaofengshi.github.io/editorial-avatar/examples/developer/preview.html">打开完整预览</a>并保持浏览器 100% 缩放。</p>
+<h2 id="start">从这里开始</h2><p><a href="https://github.com/xiaofengShi/editorial-avatar#codex">在 Codex 中激活 skill</a> · <a href="https://github.com/xiaofengShi/editorial-avatar#chatgpt">使用 ChatGPT prompt</a></p>
+<p>把照片和用途交给助手。安装、功能、使用要求与贡献方式见 <a href="https://github.com/xiaofengShi/editorial-avatar#readme">GitHub README</a>。</p>
+</main>
+<footer><span>Editorial Avatar · 肖像设计工作流</span><span><a href="https://github.com/xiaofengShi/editorial-avatar">GitHub</a> · <a href="validation.html">验证记录</a> · <a href="https://github.com/xiaofengShi/editorial-avatar/blob/main/ASSETS.md">素材与授权</a></span></footer>
+</body></html>
