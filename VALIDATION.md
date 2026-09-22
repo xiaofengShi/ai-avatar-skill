@@ -1,6 +1,6 @@
 # 验证记录
 
-初次验证：2026-09-21；新增案例：2026-09-22。范围：双入口内容、工具功能、少量虚构人物实测与一组真实旅行照片案例。项目已发布到 [GitHub](https://github.com/xiaofengShi/editorial-avatar)。
+初次验证：2026-09-21；新增案例：2026-09-22。范围：双入口内容、工具功能、少量虚构人物实测与一组真实旅行照片案例。项目已发布到 [GitHub](https://github.com/xiaofengShi/ai-avatar-skill)。
 
 ## 可以确认什么
 
@@ -16,7 +16,7 @@
 
 用户先提供街头旅行照片，在用途澄清后要求“先做一个旅行氛围的吧”。使用已安装的 editorial-avatar skill：人物照片提供身份与场景，早期对话画风图提供绘画语言。该画风图未获再分发授权，只在 manifest.json 的 unpublished_inputs 中记录哈希和输入位置；它不是仓库内的公共风格图。此案例与前五组的参考条件不同。
 
-第一次图像调用因 JPEG 的 invalid_image_file 错误未生成结果。将原照转为 PNG 后，用同一份简报调用成功，未作图像质量重试或候选筛选。实际简报见 [generation.prompt.txt](examples/travel/generation.prompt.txt)，人物源图与成片见[项目主页案例区](https://xiaofengshi.github.io/editorial-avatar/#examples)。公开源图已移除 EXIF、文本等元数据，并核对 PNG 的 IDAT 图像数据未变化。
+第一次图像调用因 JPEG 的 invalid_image_file 错误未生成结果。将原照转为 PNG 后，用同一份简报调用成功，未作图像质量重试或候选筛选。实际简报见 [generation.prompt.txt](examples/travel/generation.prompt.txt)，人物源图与成片见[项目主页案例区](https://xiaofengshi.github.io/ai-avatar-skill/#examples)。公开源图已移除 EXIF、文本等元数据，并核对 PNG 的 IDAT 图像数据未变化。
 
 助手原图检查：侧脸方向、眼镜、短发与背包保留；人物占比提高，路牌、绿荫与柔和日光形成旅行环境肖像。街景、建筑、路牌位置和细节经重构，图中的指路箭头不应用于导航。该图按竖版环境肖像查看，没有作头像圆裁切检查。
 

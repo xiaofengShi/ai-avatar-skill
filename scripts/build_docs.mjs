@@ -45,9 +45,9 @@ for (const [source, target, title] of [
     const introEnd = body.indexOf('<h2');
     let intro = body.slice(0, introEnd).replace('<p>Editorial Avatar / 案例展厅</p>', '<p class="eyebrow">Editorial Avatar / 案例展厅</p>');
     intro = intro.replace(/(<h1>.*?<\/h1>)(<p class="eyebrow">.*?<\/p>)/s, '$2$1').replace('<p>同一张照片', '<p class="intro">同一张照片');
-    body = `<section class="hero">${intro}<div class="actions"><a class="primary" href="#examples">浏览案例 ↓</a><a href="https://github.com/xiaofengShi/editorial-avatar#readme">开始使用 ↗</a></div></section>` + body.slice(introEnd);
+    body = `<section class="hero">${intro}<div class="actions"><a class="primary" href="#examples">浏览案例 ↓</a><a href="https://github.com/xiaofengShi/ai-avatar-skill#readme">开始使用 ↗</a></div></section>` + body.slice(introEnd);
     body = body.replace('<p>示例完成于', '<details><summary>试验过程与已知限制</summary><p>示例完成于').replace('<h2 id="preview">', '</details><h2 id="preview">');
-    body = body.replace('<a href="https://xiaofengshi.github.io/editorial-avatar/examples/developer/preview.html"><img', '<a class="preview-shot" href="examples/developer/preview.html"><img');
+    body = body.replace('<a href="https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html"><img', '<a class="preview-shot" href="examples/developer/preview.html"><img');
     html = readFileSync(resolve(root, 'scripts/showcase.html'), 'utf8').replace('{{content}}', body);
   }
   if (process.argv.includes('--check')) {

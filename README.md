@@ -1,8 +1,8 @@
-<h1 align="center"><img src="assets/logo-v2.png" width="40" height="40" alt="">&nbsp; <img src="assets/wordmark.svg" width="220" height="40" alt="Editorial Avatar"> <a href="https://xiaofengshi.github.io/editorial-avatar/"><img src="assets/homepage-link.svg" width="108" height="40" alt="项目主页 ↗"></a></h1>
+<h1 align="center"><img src="assets/logo-v2.png" width="40" height="40" alt="">&nbsp; <img src="assets/wordmark.svg" width="220" height="40" alt="Editorial Avatar"> <a href="https://xiaofengshi.github.io/ai-avatar-skill/"><img src="assets/homepage-link.svg" width="108" height="40" alt="项目主页 ↗"></a></h1>
 
 给一张照片，说明用途，让 AI 作为设计师与摄影师完成肖像设计。
 
-[<img src="assets/icons/code.svg" width="16" height="16" alt=""> Codex skill](#codex) · [<img src="assets/icons/chat.svg" width="16" height="16" alt=""> ChatGPT prompt](#chatgpt) · [验证记录](VALIDATION.md) · [问题反馈](https://github.com/xiaofengShi/editorial-avatar/issues)
+[<img src="assets/icons/code.svg" width="16" height="16" alt=""> Codex skill](#codex) · [<img src="assets/icons/chat.svg" width="16" height="16" alt=""> ChatGPT prompt](#chatgpt) · [验证记录](VALIDATION.md) · [问题反馈](https://github.com/xiaofengShi/ai-avatar-skill/issues)
 
 ## 能做什么
 
@@ -13,7 +13,7 @@
 | 头像裁切检查 | 查看 40、64、128、256 px 圆形裁切，以及深浅背景下的效果。 |
 | 两种使用入口 | Codex 通过 skill 执行；ChatGPT 通过方案、生成两阶段 prompt 使用。 |
 
-**使用要求：**当前环境需具备图像生成能力。本项目提供工作流与工具，不提供模型或生成额度。示例、前后对照和裁切截图集中在[项目主页](https://xiaofengshi.github.io/editorial-avatar/)；这里保留安装与使用说明。
+**使用要求：**当前环境需具备图像生成能力。本项目提供工作流与工具，不提供模型或生成额度。示例、前后对照和裁切截图集中在[项目主页](https://xiaofengshi.github.io/ai-avatar-skill/)；这里保留安装与使用说明。
 
 <a id="chatgpt"></a>
 
@@ -41,7 +41,7 @@ $editorial-avatar 这张图用于 GitHub 和 Hugging Face 的头像，保留眼�
 **首次使用、尚未安装时**，先在 Codex 中调用安装 skill：
 
 ```text
-$skill-installer 请安装 https://github.com/xiaofengShi/editorial-avatar/tree/main/skills/editorial-avatar 中的 skill。
+$skill-installer 请安装 https://github.com/xiaofengShi/ai-avatar-skill/tree/main/skills/editorial-avatar 中的 skill。
 ```
 
 安装完成后，在下一轮对话选择或输入 `$editorial-avatar` 使用。已经安装的用户直接激活即可。安装和调用是两个步骤，仓库链接本身不会自动注册 skill。
@@ -52,7 +52,7 @@ $skill-installer 请安装 https://github.com/xiaofengShi/editorial-avatar/tree/
 
 Codex skill 会调用附带的预览工具。你也可以在对话中要求：“检查这版头像的小尺寸和圆形裁切，并给我预览。”
 
-[查看主页中的裁切展示](https://xiaofengshi.github.io/editorial-avatar/#preview) · [打开实际预览](https://xiaofengshi.github.io/editorial-avatar/examples/developer/preview.html)
+[查看主页中的裁切展示](https://xiaofengshi.github.io/ai-avatar-skill/#preview) · [打开实际预览](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)
 
 用浏览器打开生成的 HTML，以 100% 缩放查看。包含 40、64、128、256 CSS 像素的圆形裁切、深浅底色与完整原图；图片内嵌，可离线分享。它不修改原图、不上传文件，也不会自动判断好不好看。生成的预览包含原始图片数据，分享预览等于分享图片。已有输出默认拒绝覆盖；需要替换时添加 `--force`。
 
