@@ -100,6 +100,18 @@
     {
       "path": "examples/travel/source.png",
       "sha256": "58cce8f5a42e30fd0126954fed78bdb03239a71fcbdfac559e40a076c0c3860e"
+    },
+    {
+      "path": "examples/speaker-smile/correction.prompt.txt",
+      "sha256": "fc5954dfb6124a971867c6329f61e56afb39ae0bd3f0bf11922c062f3d692b2f"
+    },
+    {
+      "path": "examples/speaker-smile/feedback.txt",
+      "sha256": "687d4a6b7f18e5a196c2f1b7f2ea9f6f79ce12f446d5a3a4544833e22bd200fb"
+    },
+    {
+      "path": "examples/speaker-smile/avatar-v2.png",
+      "sha256": "eb3eea5859c4b98e081e74adfc0a76d0d161159c8e0c62f4adb213360f7e1430"
     }
   ],
   "runs": [
@@ -235,7 +247,9 @@
       "synthetic": true,
       "attempt": 1,
       "request": "examples/speaker-smile/request.txt",
-      "evaluation": "Assistant-directed generation following repository workflow; not an independent skill invocation test"
+      "evaluation": "Assistant-directed generation following repository workflow; not an independent skill invocation test",
+      "status": "rejected_by_user",
+      "feedback": "Head, neck and torso pose looked disconnected; earlier assistant assessment withdrawn"
     },
     {
       "id": "travel-illustration",
@@ -278,6 +292,30 @@
       ],
       "approval": "User approved result and requested publishing this example in GitHub README",
       "evaluation": "Single user-approved result; not an independent or repeatability test"
+    },
+    {
+      "id": "speaker-smile-correction",
+      "date": "2026-09-22",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/speaker-smile/correction.prompt.txt",
+      "request": "examples/speaker-smile/feedback.txt",
+      "output": "examples/speaker-smile/avatar-v2.png",
+      "inputs": [
+        {
+          "role": "edit_base_and_style",
+          "path": "examples/speaker/avatar.png"
+        },
+        {
+          "role": "identity",
+          "path": "examples/speaker/source.png"
+        }
+      ],
+      "synthetic": true,
+      "attempt": 2,
+      "status": "generated_pending_user_review",
+      "evaluation": "One correction after user rejected the first pose; used original base and original synthetic identity photograph"
     }
   ]
 }

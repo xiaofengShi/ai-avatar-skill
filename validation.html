@@ -30,7 +30,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <h3>大会演讲者头像：Codex</h3>
 <p>输入：独立生成的虚构女性照片与公共画风参考；用途：大会演讲者介绍。一次生成，无追加修正。助手原图观察：自然肤色、年龄线索和短卷发保留；梅紫外套、浅灰内搭与灰紫背景形成完整方案。五官略有重绘、头发边缘较细密，不能据此证明身份没有变化。尚未获用户认可。</p>
 <h3>2026-09-22：新增生成与编辑测试</h3>
-<p>三组均一次调用生成，无追加修正或候选筛选。测试请求由维护助手构造，读取仓库版 SKILL.md 与 workflow.md 后编写简报并调用内置图像工具；没有修改 skill 或共享 prompt。实际输入顺序、请求、简报、输出与哈希均记录在 manifest.json。编辑基底取自公开示例，不代表用户已认可该基底。</p>
+<p>三组首版均一次调用生成；之后微笑与歪头案例收到用户的姿态问题反馈，追加一次修正，详见下文。测试请求由维护助手构造，读取仓库版 SKILL.md 与 workflow.md 后编写简报并调用内置图像工具；没有修改 skill 或共享 prompt。实际输入顺序、请求、简报、输出与哈希均记录在 manifest.json。编辑基底取自公开示例，不代表用户已认可该基底。</p>
 <div class="table-scroll" role="region" aria-label="对照表，可横向滚动" tabindex="0"><table>
 <thead>
 <tr>
@@ -55,11 +55,15 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <tr>
 <td>微笑与歪头</td>
 <td>speaker/avatar.png；检查表情、头颈肩及其他设计保留</td>
-<td>轻微倾斜与少量上齿可见，头颈关系连贯，原服装和配色延续；面部纹理更平滑、头肩位置略有变化，不能称为只改嘴角。</td>
+<td>首版曾被助手误判为“头颈关系连贯”；用户指出头与身体方向不协调、观感怪异。该结论已撤回，首版标为用户否定。</td>
 <td>深浅底色下笑意可见、短卷发未被误裁；40 px 下牙齿与眼部细节不可细辨。</td>
 </tr>
 </tbody></table></div>
 <p>三组均在 Codex 内置浏览器实际查看了本地 HTTP 预览的 40、64、128、256 CSS 像素深浅底色圆形裁切。以上是助手观察，未做独立真人评价、身份量化比对或像素级差异分析，不能推出跨人物稳定性。</p>
+<h3>微笑案例的用户反馈与修正</h3>
+<p>用户指出首版的头和身子方向不协调。助手之前的“头颈关系连贯”评价不准确；小尺寸和圆裁切检查未能发现该整体姿态问题，不能代替审美判断。保留 <a href="examples/speaker-smile/avatar.png">首版问题图</a> 与原始指令，不将首版继续列为成功案例。</p>
+<p>追加一次修正，以原始 speaker/avatar.png 作编辑基底、speaker/source.png 作身份参考；未将用户否定版作为身份参考。修正方向是减小歪头幅度，让头部更接近直立，并连同肩线、领口一起重画。保留微笑、年龄感、服装和配色。实际简报见 <a href="examples/speaker-smile/correction.prompt.txt">correction.prompt.txt</a>。</p>
+<p><a href="examples/speaker-smile/avatar-v2.png">修正版</a> 已生成。助手原图观察：头部侧倾减少、双肩更接近正面，颈部与领口过渡相比首版更平缓。已在内置浏览器查看 40、64、128、256 CSS 像素深浅底色圆裁切，头发与脸部未被误裁。此处只描述可见变化；状态为“待用户确认”，没有将生成成功写成用户认可。</p>
 <h3>ChatGPT 网页试验（2026-09-21）</h3>
 <p>在 Chrome 的 ChatGPT 界面实际生成了一张虚构女性照片，未上传私人照片。随后发送完整的首版单消息 workflow 加“用刚刚生成的照片帮我做张头像”，网页直接生成了一张接近修饰照片的头像，没有先询问具体用途。补充技术大会用途后再次得到图像；画风仍偏摄影，未返回要求的独立下载链接。这不是“用途澄清通过”，也不是稳定匹配参考画风的证据。</p>
 <p>本次网页操作经历了粘贴无效果、多行模拟键盘输入被拆分、元素 ID 失效等自动化问题；实际发送的首版完整 prompt 经文本框接口输入，界面对 Markdown 添加了转义符。试验还有已生成源图的上下文，不能当作干净的新对话盲测。没有通过分享按钮发布对话或图片。</p>
@@ -114,5 +118,5 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 npm run check:docs
 </code></pre>
-<p>已执行上述 Python 检查（3 项单元测试通过、共享 prompt 同步、25 个素材及指令哈希与本地链接一致）；HTML 由 Markdown 生成并作一致性检查。Skill 另通过 Codex skill-creator 的结构验证。行为测试的观察记录见 <a href="tests/chatgpt-observations.json">chatgpt-observations.json</a>。</p>
+<p>已执行上述 Python 检查（3 项单元测试通过、共享 prompt 同步、28 个素材及指令哈希与本地链接一致）；HTML 由 Markdown 生成并作一致性检查。Skill 另通过 Codex skill-creator 的结构验证。行为测试的观察记录见 <a href="tests/chatgpt-observations.json">chatgpt-observations.json</a>。</p>
 </main></body></html>
