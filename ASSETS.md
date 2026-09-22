@@ -14,6 +14,10 @@
 
 文件哈希、生成入口、参考图顺序和实际指令记录在 [manifest.json](examples/manifest.json)。工具没有公开的模型标识与 seed 记为 `null`。图像不会因记录相同 prompt 而保证逐像素重现。
 
+## 项目标志
+
+`assets/logo.png` 为 Codex 内置图像工具生成的项目标志，以肖像取景框、人物头部和字母 A 组合，沿用陶土红配色。用于 README、主页页头与浏览器图标，未引用真人照片或第三方标志。
+
 ## 真实旅行案例
 
 - `examples/travel/source.png`：用户提供的旅行照片之公开副本。图像工具未能读取原 JPEG，使用 PNG 转换版生成。发布时移除了 EXIF、文本等元数据，保留颜色信息及原 PNG 的 IDAT 图像数据；原文件没有被改写。
