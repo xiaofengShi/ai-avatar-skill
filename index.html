@@ -82,6 +82,8 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <p>此 skill 需要当前 Codex 环境已提供图像生成能力。缺少该能力时，助手会说明限制并提供创作简报。调用方式见 <a href="https://learn.chatgpt.com/docs/build-skills">Codex skills 文档</a>。</p>
 <h2>检查小尺寸与圆形裁切</h2>
 <p>Codex skill 会调用附带的预览工具。你也可以在对话中要求：“检查这版头像的小尺寸和圆形裁切，并给我预览。”</p>
+<p><a href="examples/developer/preview.html"><img src="examples/developer/preview-screenshot.png" alt="头像预览实际截图：浅色与深色背景下的 40、64、128、256 px 圆形裁切"></a></p>
+<p>上图为虚构人物示例的实际预览截图。截图在 README 中会缩放；检查真实 CSS 尺寸时，请<a href="examples/developer/preview.html">打开完整预览</a>并保持浏览器 100% 缩放。</p>
 <p>用浏览器打开生成的 HTML，以 100% 缩放查看。包含 40、64、128、256 CSS 像素的圆形裁切、深浅底色与完整原图；图片内嵌，可离线分享。它不修改原图、不上传文件，也不会自动判断好不好看。生成的预览包含原始图片数据，分享预览等于分享图片。已有输出默认拒绝覆盖；需要替换时添加 <code>--force</code>。</p>
 <p>仓库内的示例预览使用 <code>--linked</code> 相对引用原图，避免在 Git 中重复保存大块图片数据。该模式离线使用时需保留 HTML 与图片的相对位置；默认不加此选项时仍生成独立的内嵌版。</p>
 <h2>维护与贡献</h2>

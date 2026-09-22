@@ -56,6 +56,10 @@ $skill-installer 请安装 https://github.com/xiaofengShi/editorial-avatar/tree/
 
 Codex skill 会调用附带的预览工具。你也可以在对话中要求：“检查这版头像的小尺寸和圆形裁切，并给我预览。”
 
+[![头像预览实际截图：浅色与深色背景下的 40、64、128、256 px 圆形裁切](examples/developer/preview-screenshot.png)](examples/developer/preview.html)
+
+上图为虚构人物示例的实际预览截图。截图在 README 中会缩放；检查真实 CSS 尺寸时，请[打开完整预览](examples/developer/preview.html)并保持浏览器 100% 缩放。
+
 用浏览器打开生成的 HTML，以 100% 缩放查看。包含 40、64、128、256 CSS 像素的圆形裁切、深浅底色与完整原图；图片内嵌，可离线分享。它不修改原图、不上传文件，也不会自动判断好不好看。生成的预览包含原始图片数据，分享预览等于分享图片。已有输出默认拒绝覆盖；需要替换时添加 `--force`。
 
 仓库内的示例预览使用 `--linked` 相对引用原图，避免在 Git 中重复保存大块图片数据。该模式离线使用时需保留 HTML 与图片的相对位置；默认不加此选项时仍生成独立的内嵌版。
