@@ -1,4 +1,8 @@
+**[项目主页 · 在线查看示例与头像预览](https://xiaofengshi.github.io/editorial-avatar/)**
+
 # Editorial Avatar
+
+[GitHub · xiaofengShi/editorial-avatar](https://github.com/xiaofengShi/editorial-avatar) · [反馈问题](https://github.com/xiaofengShi/editorial-avatar/issues) · [验证记录](https://xiaofengshi.github.io/editorial-avatar/validation.html)
 
 给一张照片，说明要用在哪里，让 AI 作为设计师与摄影师完成肖像设计。
 
@@ -7,8 +11,6 @@
 这套创作流程与工具包帮助你减少重复交代、保存设计原则，并提供可复查示例和真实尺寸预览。
 
 ## 先看示例
-
-[在线阅读与预览](https://xiaofengshi.github.io/editorial-avatar/) · [验证记录网页版](https://xiaofengshi.github.io/editorial-avatar/validation.html)
 
 **6 组示例，一张表对照。** 旅行插画来自用户授权公开的真实照片，成片已获该用户认可；其余 5 组覆盖 2 个 AI 生成的虚构人物。所有成片均由 Codex 内置图像工具生成。点击图片可查看原尺寸；窄屏可横向滚动表格。
 
