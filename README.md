@@ -10,6 +10,8 @@
 
 以下人物及原始照片均为 AI 生成的虚构素材。示例展示实际输入和输出，不能作为真实人物身份保真的证据。生成条件与评审边界见 [验证记录](VALIDATION.md)。
 
+目前有 **5 组图像示例**：开源社区头像、大会演讲者头像、去眼镜局部编辑、研究团队深色头像、微笑与姿态调整。后面三组复用前面的虚构人物，便于观察用途和编辑要求变化后的结果；不代表五个独立人物测试。
+
 ### 开源社区头像
 
 委托：用于 GitHub 和 Hugging Face，保留眼镜，自然、容易接近。
@@ -29,6 +31,38 @@
 | ![虚构女性原始照片](examples/speaker/source.png) | ![梅紫外套与浅灰紫背景的演讲者头像](examples/speaker/avatar.png) |
 
 设计：梅紫便装外套配浅灰紫背景，保留短卷发与灰白发丝，神态平静亲和。[实际生成指令](examples/speaker/generation.prompt.txt) · [圆裁切与小尺寸预览](examples/speaker/preview.html)。两组均由 Codex 图像工具生成。
+
+### 去掉眼镜，保留整体设计
+
+测试请求：“继续修改这张 GitHub / Hugging Face 头像：只去掉眼镜，保留这一版的构图、神态、发型、衣服、背景和画风。”
+
+| 编辑基底 | 去眼镜结果 |
+| --- | --- |
+| ![带眼镜的编辑基底](examples/developer/avatar.png) | ![去掉眼镜后的社区头像](examples/remove-glasses/avatar.png) |
+
+观察：镜框、鼻托和镜腿已去除，服装、背景与整体构图接近原版；眼周有补绘，不能当成遮挡细节的真实还原，也不保证其他位置像素不变。一次生成，无重试。[实际生成指令](examples/remove-glasses/generation.prompt.txt) · [圆裁切预览](examples/remove-glasses/preview.html)。
+
+### 同一人物，用于研究团队主页
+
+测试请求：“为研究团队官网做一张头像。保留眼镜和年龄感，半写实手绘；主页采用深色视觉，请你设计服装、光线和背景。”
+
+| 原始虚构照片 | 深色研究团队头像 |
+| --- | --- |
+| ![用于研究团队头像的原始虚构照片](examples/developer/source.png) | ![深绿色便装与蓝绿色背景的研究团队头像](examples/researcher/avatar.png) |
+
+设计：深绿便装与蓝绿色背景，柔和侧光突出面部，保留眼镜、灰白头发和胡茬。40 px 下肩部与背景对比偏弱，脸部仍可辨；不能据此认为深色版优于社区版。一次生成，无重试。[实际生成指令](examples/researcher/generation.prompt.txt) · [圆裁切预览](examples/researcher/preview.html)。
+
+### 微笑与轻微歪头
+
+测试请求：“在这张大会演讲者头像的基础上，稍微歪头，增加一个自然的露齿微笑，像和熟人交流。保留人物年龄感、服装、背景、画风和画幅。”
+
+| 编辑基底 | 表情与姿态调整 |
+| --- | --- |
+| ![修改前的大会演讲者头像](examples/speaker/avatar.png) | ![轻微歪头并露齿微笑的演讲者头像](examples/speaker-smile/avatar.png) |
+
+观察：轻微歪头与少量露齿可见，梅紫外套、灰紫背景和短卷发延续；面部纹理与头肩位置也有重绘。40 px 下可以看到笑意，不能细辨牙齿和眼部细节。一次生成，无重试。[实际生成指令](examples/speaker-smile/generation.prompt.txt) · [圆裁切预览](examples/speaker-smile/preview.html)。
+
+新增测试于 2026-09-22 完成。请求由维护助手构造，并按仓库 workflow 编写实际生成简报；这些是流程指导下的生成与编辑样例，不是独立新会话的 skill 自动触发测试。全部为 Codex 内置图像工具输出，已作助手视觉检查，尚未获独立真人评价。
 
 ## ChatGPT：复制即可开始
 

@@ -48,6 +48,42 @@
     {
       "path": "examples/speaker/request.txt",
       "sha256": "b30ce5362065c1c6bd3a9dc84bd87042e03d2482b38a385df4b9999a573a4022"
+    },
+    {
+      "path": "examples/remove-glasses/generation.prompt.txt",
+      "sha256": "a1f1e074c9e8f6a586614330097cba1d9aa3f4070b9d1d4d5e83c224b697a337"
+    },
+    {
+      "path": "examples/remove-glasses/avatar.png",
+      "sha256": "519308a0c0335d0ce9a7f56bfe23626ee0e18e36bc64f68222a94dd2ecbced80"
+    },
+    {
+      "path": "examples/remove-glasses/request.txt",
+      "sha256": "004f9dc1051761da46a3ce540fe4167d3e700bfe26632043d7ab7930f0803cd2"
+    },
+    {
+      "path": "examples/researcher/generation.prompt.txt",
+      "sha256": "f0202b814ed43e583026a3d6a9990490d435dff0f8adb94b580ee9275c153b23"
+    },
+    {
+      "path": "examples/researcher/avatar.png",
+      "sha256": "90d748fed70c2cc9bdb8c1810826634907997d23d6a8c89b0b1c31cf5c8f6a1a"
+    },
+    {
+      "path": "examples/researcher/request.txt",
+      "sha256": "d6b922311b6b50e771dc5858a44762bbabe24fb293f0ab58423d6df55fde8f88"
+    },
+    {
+      "path": "examples/speaker-smile/generation.prompt.txt",
+      "sha256": "68cf202537e99712dad544fc4f007d488e9279f2bd4b4a57f51ef6fede3fe960"
+    },
+    {
+      "path": "examples/speaker-smile/avatar.png",
+      "sha256": "01f9bb1184a3ae6c8cb279d98685bdb1bcc5536621fcf8e2d05400e260d10606"
+    },
+    {
+      "path": "examples/speaker-smile/request.txt",
+      "sha256": "0c46d2156e76ef0559dc3991cf49df4017252d51a5f786b83be7c59f352bfc95"
     }
   ],
   "runs": [
@@ -123,6 +159,67 @@
         }
       ],
       "synthetic": true
+    },
+    {
+      "id": "remove-glasses-avatar",
+      "date": "2026-09-22",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/remove-glasses/generation.prompt.txt",
+      "output": "examples/remove-glasses/avatar.png",
+      "inputs": [
+        {
+          "role": "edit_base_and_identity",
+          "path": "examples/developer/avatar.png"
+        }
+      ],
+      "synthetic": true,
+      "attempt": 1,
+      "request": "examples/remove-glasses/request.txt",
+      "evaluation": "Assistant-directed generation following repository workflow; not an independent skill invocation test"
+    },
+    {
+      "id": "researcher-avatar",
+      "date": "2026-09-22",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/researcher/generation.prompt.txt",
+      "output": "examples/researcher/avatar.png",
+      "inputs": [
+        {
+          "role": "style",
+          "path": "skills/editorial-avatar/references/style-anchor.png"
+        },
+        {
+          "role": "identity",
+          "path": "examples/developer/source.png"
+        }
+      ],
+      "synthetic": true,
+      "attempt": 1,
+      "request": "examples/researcher/request.txt",
+      "evaluation": "Assistant-directed generation following repository workflow; not an independent skill invocation test"
+    },
+    {
+      "id": "speaker-smile-avatar",
+      "date": "2026-09-22",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/speaker-smile/generation.prompt.txt",
+      "output": "examples/speaker-smile/avatar.png",
+      "inputs": [
+        {
+          "role": "edit_base_and_identity",
+          "path": "examples/speaker/avatar.png"
+        }
+      ],
+      "synthetic": true,
+      "attempt": 1,
+      "request": "examples/speaker-smile/request.txt",
+      "evaluation": "Assistant-directed generation following repository workflow; not an independent skill invocation test"
     }
   ]
 }

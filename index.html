@@ -14,6 +14,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <p>这套创作流程与工具包帮助你减少重复交代、保存设计原则，并提供可复查示例和真实尺寸预览。</p>
 <h2>先看示例</h2>
 <p>以下人物及原始照片均为 AI 生成的虚构素材。示例展示实际输入和输出，不能作为真实人物身份保真的证据。生成条件与评审边界见 <a href="VALIDATION.md">验证记录</a>。</p>
+<p>目前有 <strong>5 组图像示例</strong>：开源社区头像、大会演讲者头像、去眼镜局部编辑、研究团队深色头像、微笑与姿态调整。后面三组复用前面的虚构人物，便于观察用途和编辑要求变化后的结果；不代表五个独立人物测试。</p>
 <h3>开源社区头像</h3>
 <p>委托：用于 GitHub 和 Hugging Face，保留眼镜，自然、容易接近。</p>
 <table>
@@ -44,6 +45,52 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 </tr>
 </tbody></table>
 <p>设计：梅紫便装外套配浅灰紫背景，保留短卷发与灰白发丝，神态平静亲和。<a href="examples/speaker/generation.prompt.txt">实际生成指令</a> · <a href="examples/speaker/preview.html">圆裁切与小尺寸预览</a>。两组均由 Codex 图像工具生成。</p>
+<h3>去掉眼镜，保留整体设计</h3>
+<p>测试请求：“继续修改这张 GitHub / Hugging Face 头像：只去掉眼镜，保留这一版的构图、神态、发型、衣服、背景和画风。”</p>
+<table>
+<thead>
+<tr>
+<th>编辑基底</th>
+<th>去眼镜结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="examples/developer/avatar.png" alt="带眼镜的编辑基底"></td>
+<td><img src="examples/remove-glasses/avatar.png" alt="去掉眼镜后的社区头像"></td>
+</tr>
+</tbody></table>
+<p>观察：镜框、鼻托和镜腿已去除，服装、背景与整体构图接近原版；眼周有补绘，不能当成遮挡细节的真实还原，也不保证其他位置像素不变。一次生成，无重试。<a href="examples/remove-glasses/generation.prompt.txt">实际生成指令</a> · <a href="examples/remove-glasses/preview.html">圆裁切预览</a>。</p>
+<h3>同一人物，用于研究团队主页</h3>
+<p>测试请求：“为研究团队官网做一张头像。保留眼镜和年龄感，半写实手绘；主页采用深色视觉，请你设计服装、光线和背景。”</p>
+<table>
+<thead>
+<tr>
+<th>原始虚构照片</th>
+<th>深色研究团队头像</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="examples/developer/source.png" alt="用于研究团队头像的原始虚构照片"></td>
+<td><img src="examples/researcher/avatar.png" alt="深绿色便装与蓝绿色背景的研究团队头像"></td>
+</tr>
+</tbody></table>
+<p>设计：深绿便装与蓝绿色背景，柔和侧光突出面部，保留眼镜、灰白头发和胡茬。40 px 下肩部与背景对比偏弱，脸部仍可辨；不能据此认为深色版优于社区版。一次生成，无重试。<a href="examples/researcher/generation.prompt.txt">实际生成指令</a> · <a href="examples/researcher/preview.html">圆裁切预览</a>。</p>
+<h3>微笑与轻微歪头</h3>
+<p>测试请求：“在这张大会演讲者头像的基础上，稍微歪头，增加一个自然的露齿微笑，像和熟人交流。保留人物年龄感、服装、背景、画风和画幅。”</p>
+<table>
+<thead>
+<tr>
+<th>编辑基底</th>
+<th>表情与姿态调整</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="examples/speaker/avatar.png" alt="修改前的大会演讲者头像"></td>
+<td><img src="examples/speaker-smile/avatar.png" alt="轻微歪头并露齿微笑的演讲者头像"></td>
+</tr>
+</tbody></table>
+<p>观察：轻微歪头与少量露齿可见，梅紫外套、灰紫背景和短卷发延续；面部纹理与头肩位置也有重绘。40 px 下可以看到笑意，不能细辨牙齿和眼部细节。一次生成，无重试。<a href="examples/speaker-smile/generation.prompt.txt">实际生成指令</a> · <a href="examples/speaker-smile/preview.html">圆裁切预览</a>。</p>
+<p>新增测试于 2026-09-22 完成。请求由维护助手构造，并按仓库 workflow 编写实际生成简报；这些是流程指导下的生成与编辑样例，不是独立新会话的 skill 自动触发测试。全部为 Codex 内置图像工具输出，已作助手视觉检查，尚未获独立真人评价。</p>
 <h2>ChatGPT：复制即可开始</h2>
 <ol>
 <li>打开 <a href="prompts/chatgpt.md">ChatGPT prompt</a>，复制“方案阶段”代码块。</li>
