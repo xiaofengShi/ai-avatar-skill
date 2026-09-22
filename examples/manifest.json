@@ -84,6 +84,22 @@
     {
       "path": "examples/speaker-smile/request.txt",
       "sha256": "0c46d2156e76ef0559dc3991cf49df4017252d51a5f786b83be7c59f352bfc95"
+    },
+    {
+      "path": "examples/travel/generation.prompt.txt",
+      "sha256": "27557857f1ad91aa4ceb428a34b6f5174cf14379843a1fe4199c34aa22e24e41"
+    },
+    {
+      "path": "examples/travel/illustration.png",
+      "sha256": "54d2c8cfc7de771f6f697c24be218fd436d98e9ce681ef8aa260e4f93f91490c"
+    },
+    {
+      "path": "examples/travel/request.txt",
+      "sha256": "9484b60031f2c70568cd3f4b3ae4b8b910abc148a1b44df7473a195fdabced45"
+    },
+    {
+      "path": "examples/travel/source.png",
+      "sha256": "58cce8f5a42e30fd0126954fed78bdb03239a71fcbdfac559e40a076c0c3860e"
     }
   ],
   "runs": [
@@ -220,6 +236,48 @@
       "attempt": 1,
       "request": "examples/speaker-smile/request.txt",
       "evaluation": "Assistant-directed generation following repository workflow; not an independent skill invocation test"
+    },
+    {
+      "id": "travel-illustration",
+      "date": "2026-09-22",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/travel/generation.prompt.txt",
+      "request": "examples/travel/request.txt",
+      "output": "examples/travel/illustration.png",
+      "inputs": [
+        {
+          "position": 2,
+          "role": "identity_and_scene",
+          "path": "examples/travel/source.png",
+          "submitted_sha256": "7f35afb8e970c2acf8e2e0f851d2465a13ac656f7c1fe9035c2b511c57cd686c",
+          "publication_transform": "PNG metadata removed; IDAT image data unchanged"
+        }
+      ],
+      "unpublished_inputs": [
+        {
+          "position": 1,
+          "role": "style",
+          "sha256": "85a676460be0f3d7eebb09cf596ede813b81a4f6e1c9f240ebe6142a44ba5516",
+          "reason": "Earlier conversation style reference; redistribution not authorized. This is not the bundled public style anchor."
+        }
+      ],
+      "synthetic": false,
+      "source_type": "user-provided real photograph",
+      "output_type": "AI-generated illustration",
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "invalid_image_file for JPEG; no output"
+        },
+        {
+          "attempt": 2,
+          "result": "generated using PNG conversion of same photograph; unchanged prompt"
+        }
+      ],
+      "approval": "User approved result and requested publishing this example in GitHub README",
+      "evaluation": "Single user-approved result; not an independent or repeatability test"
     }
   ]
 }

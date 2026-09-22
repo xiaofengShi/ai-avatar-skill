@@ -2,22 +2,28 @@
 main{max-width:1040px;margin:auto;padding:clamp(16px,4vw,48px);overflow-wrap:anywhere}
 h1{font-size:clamp(30px,5vw,48px);line-height:1.15}h2{margin-top:36px;padding-top:18px;border-top:1px solid #cbd4cb;font-size:24px}
 h3{font-size:19px}a{color:#1b6261;text-underline-offset:3px}a:focus-visible{outline:3px solid #246d70;outline-offset:3px}
-img{max-width:100%;height:auto;display:block;margin:12px auto;border-radius:8px}table{border-collapse:collapse;width:100%;table-layout:fixed}
+img{max-width:100%;height:auto;display:block;margin:12px auto;border-radius:8px}.table-scroll{overflow-x:auto}.table-scroll:focus-visible{outline:3px solid #246d70}table{border-collapse:collapse;width:100%;min-width:760px;table-layout:fixed}
 td,th{padding:8px;text-align:left;border-bottom:1px solid #cbd4cb;vertical-align:top}td img{width:100%}
 pre{overflow:auto;padding:18px;background:#e8eee9;border-radius:8px;font-size:14px;line-height:1.6}code{font-family:ui-monospace,monospace}li{margin:8px 0}
 blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;background:#edf1eb}
 @media(max-width:480px){td,th{padding:4px;font-size:14px}}
-@media print{body{background:white}main{padding:0}h2,h3{break-after:avoid}tr{break-inside:avoid}img{max-height:85mm;width:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}}
+@media print{body{background:white}main{padding:0}h2,h3{break-after:avoid}.table-scroll{overflow:visible}table{min-width:0;font-size:12px}tr{break-inside:avoid}img{max-height:85mm;width:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}}
 </style></head><body><main><h1>验证记录</h1>
-<p>初次验证：2026-09-21；新增案例：2026-09-22。范围：双入口内容、工具功能与少量虚构人物实测。项目已发布到 <a href="https://github.com/xiaofengShi/editorial-avatar">GitHub</a>。</p>
+<p>初次验证：2026-09-21；新增案例：2026-09-22。范围：双入口内容、工具功能、少量虚构人物实测与一组真实旅行照片案例。项目已发布到 <a href="https://github.com/xiaofengShi/editorial-avatar">GitHub</a>。</p>
 <h2>可以确认什么</h2>
 <ul>
 <li>ChatGPT prompt 从共享 workflow 自动生成；Codex skill 直接读取相同 workflow。</li>
 <li>Codex 内置图像工具完成了 5 组头像示例：2 组原始照片到头像、1 组相同人物的用途适配、2 组已有头像编辑。仅覆盖 2 个虚构人物。实际 brief 由当前助手按流程编写，不是独立代理盲测或 skill 自动触发测试。</li>
+<li>另完成 1 组真实旅行照片到插画的委托，共 6 组图像示例。旅行成片获该用户认可并授权公开，其他案例仍是助手检查；这不是六人测试或独立真人盲评。</li>
 <li>预览工具已验证原图字节保留、内嵌显示、文件名 HTML 转义、拒绝覆盖输出、拒绝覆盖输入和拒绝 SVG 作为图像输入。</li>
 <li>Skill 结构校验通过。结构通过不等于审美或行为测试通过。</li>
 </ul>
 <h2>示例审片</h2>
+<h3>真实旅行照片：用户认可</h3>
+<p>用户先提供街头旅行照片，在用途澄清后要求“先做一个旅行氛围的吧”。使用已安装的 editorial-avatar skill：人物照片提供身份与场景，早期对话画风图提供绘画语言。该画风图未获再分发授权，只在 manifest.json 的 unpublished_inputs 中记录哈希和输入位置；它不是仓库内的公共风格图。此案例与前五组的参考条件不同。</p>
+<p>第一次图像调用因 JPEG 的 invalid_image_file 错误未生成结果。将原照转为 PNG 后，用同一份简报调用成功，未作图像质量重试或候选筛选。实际简报见 <a href="examples/travel/generation.prompt.txt">generation.prompt.txt</a>，人物源图与成片见 README 对照表。公开源图已移除 EXIF、文本等元数据，并核对 PNG 的 IDAT 图像数据未变化。</p>
+<p>助手原图检查：侧脸方向、眼镜、短发与背包保留；人物占比提高，路牌、绿荫与柔和日光形成旅行环境肖像。街景、建筑、路牌位置和细节经重构，图中的指路箭头不应用于导航。该图按竖版环境肖像查看，没有作头像圆裁切检查。</p>
+<p>用户评价“不错”，并要求将此案例加入 GitHub README，状态为“已生成、助手检查、该用户认可并授权公开”。这是单个真实案例，不能推出身份精确还原、跨人物稳定性或模型优越性。</p>
 <h3>开源社区头像：Codex</h3>
 <p>输入：虚构男性照片与公共画风参考；用途：GitHub / Hugging Face；保留眼镜。输出为一次生成，没有通过多次抽样挑选。</p>
 <p>助手原图审片观察：圆框眼镜、灰白发色、胡茬与宽脸辨识线索保留；墨蓝便装与浅蓝灰背景协调，表情克制。皮肤局部纹理仍偏细碎，绘画简化程度没有参考图那么强。状态为“已生成、助手原图审片”，未获独立真人评价或用户认可。</p>
@@ -25,7 +31,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <p>输入：独立生成的虚构女性照片与公共画风参考；用途：大会演讲者介绍。一次生成，无追加修正。助手原图观察：自然肤色、年龄线索和短卷发保留；梅紫外套、浅灰内搭与灰紫背景形成完整方案。五官略有重绘、头发边缘较细密，不能据此证明身份没有变化。尚未获用户认可。</p>
 <h3>2026-09-22：新增生成与编辑测试</h3>
 <p>三组均一次调用生成，无追加修正或候选筛选。测试请求由维护助手构造，读取仓库版 SKILL.md 与 workflow.md 后编写简报并调用内置图像工具；没有修改 skill 或共享 prompt。实际输入顺序、请求、简报、输出与哈希均记录在 manifest.json。编辑基底取自公开示例，不代表用户已认可该基底。</p>
-<table>
+<div class="table-scroll" role="region" aria-label="对照表，可横向滚动" tabindex="0"><table>
 <thead>
 <tr>
 <th>案例</th>
@@ -52,7 +58,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <td>轻微倾斜与少量上齿可见，头颈关系连贯，原服装和配色延续；面部纹理更平滑、头肩位置略有变化，不能称为只改嘴角。</td>
 <td>深浅底色下笑意可见、短卷发未被误裁；40 px 下牙齿与眼部细节不可细辨。</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>三组均在 Codex 内置浏览器实际查看了本地 HTTP 预览的 40、64、128、256 CSS 像素深浅底色圆形裁切。以上是助手观察，未做独立真人评价、身份量化比对或像素级差异分析，不能推出跨人物稳定性。</p>
 <h3>ChatGPT 网页试验（2026-09-21）</h3>
 <p>在 Chrome 的 ChatGPT 界面实际生成了一张虚构女性照片，未上传私人照片。随后发送完整的首版单消息 workflow 加“用刚刚生成的照片帮我做张头像”，网页直接生成了一张接近修饰照片的头像，没有先询问具体用途。补充技术大会用途后再次得到图像；画风仍偏摄影，未返回要求的独立下载链接。这不是“用途澄清通过”，也不是稳定匹配参考画风的证据。</p>
@@ -66,14 +72,14 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <h3>已检查与待验证范围</h3>
 <ul>
 <li>ChatGPT 真实照片上传路径、双图风格参考与后续编辑；当前只完成虚构源图的基本交互实测。</li>
-<li>README 与头像预览已在 390 CSS 像素宽的浏览器 iframe 中查看，文字正常换行、圆形预览完整；这不是实体手机测试。打印效果尚未查看。</li>
+<li>README 与头像预览已在 390 CSS 像素宽的浏览器 iframe 中查看。六组示例大表格另完成了桌面显示与窄屏横向滚动检查，能滚动看到成片列；这不是实体手机测试。打印效果尚未查看。</li>
 <li>内嵌图像字节与相对路径已通过脚本测试，浏览器视觉检查使用本地 HTTP 页面。尝试打开 file:// 页面时原生浏览器自动化未完成导航，因此直接双击文件的离线显示尚未实测。</li>
 <li>独立真人审美评价，以及需要时的短 prompt 对照。</li>
 </ul>
 <p>没有进行同条件短 prompt 对照、跨真实人物身份验证或多次重复生成，因此不宣称比简短 prompt 更好，也不宣称风格或审美稳定。使用不同入口、人物或有无参考图的样例只能展示覆盖，不能直接比较模型或产品优劣。</p>
 <h2>可复跑的行为测试</h2>
 <p>在支持图像生成的新对话中复制 <a href="prompts/chatgpt.md">ChatGPT prompt</a> 的方案阶段，方案明确后发送生成阶段；或在 Codex 调用 skill。使用 <a href="examples/developer/source.png">虚构源图</a>，避免上传私人照片。</p>
-<table>
+<div class="table-scroll" role="region" aria-label="对照表，可横向滚动" tabindex="0"><table>
 <thead>
 <tr>
 <th>测试输入</th>
@@ -100,7 +106,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <td>“再瘦 20 斤。”</td>
 <td>作为视觉模拟处理，不宣称精确预测减重结果，不擅自改其他设计。</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>记录原始输入、实际用户消息、能获得的生成指令、入口与日期、每次输出及重试原因。对照试验需要固定图像、用途、模型条件与重试预算；审美评价应盲看同尺寸成片并报告评审人数，不能用助手自评代替独立真人盲审。</p>
 <h2>本地检查命令</h2>
 <pre><code class="language-bash">python3 scripts/build_prompt.py --check
@@ -108,5 +114,5 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 npm run check:docs
 </code></pre>
-<p>已执行上述 Python 检查（3 项单元测试通过、共享 prompt 同步、21 个素材及指令哈希与本地链接一致）；HTML 由 Markdown 生成并作一致性检查。Skill 另通过 Codex skill-creator 的结构验证。行为测试的观察记录见 <a href="tests/chatgpt-observations.json">chatgpt-observations.json</a>。</p>
+<p>已执行上述 Python 检查（3 项单元测试通过、共享 prompt 同步、25 个素材及指令哈希与本地链接一致）；HTML 由 Markdown 生成并作一致性检查。Skill 另通过 Codex skill-creator 的结构验证。行为测试的观察记录见 <a href="tests/chatgpt-observations.json">chatgpt-observations.json</a>。</p>
 </main></body></html>

@@ -1,15 +1,26 @@
 # 验证记录
 
-初次验证：2026-09-21；新增案例：2026-09-22。范围：双入口内容、工具功能与少量虚构人物实测。项目已发布到 [GitHub](https://github.com/xiaofengShi/editorial-avatar)。
+初次验证：2026-09-21；新增案例：2026-09-22。范围：双入口内容、工具功能、少量虚构人物实测与一组真实旅行照片案例。项目已发布到 [GitHub](https://github.com/xiaofengShi/editorial-avatar)。
 
 ## 可以确认什么
 
 - ChatGPT prompt 从共享 workflow 自动生成；Codex skill 直接读取相同 workflow。
 - Codex 内置图像工具完成了 5 组头像示例：2 组原始照片到头像、1 组相同人物的用途适配、2 组已有头像编辑。仅覆盖 2 个虚构人物。实际 brief 由当前助手按流程编写，不是独立代理盲测或 skill 自动触发测试。
+- 另完成 1 组真实旅行照片到插画的委托，共 6 组图像示例。旅行成片获该用户认可并授权公开，其他案例仍是助手检查；这不是六人测试或独立真人盲评。
 - 预览工具已验证原图字节保留、内嵌显示、文件名 HTML 转义、拒绝覆盖输出、拒绝覆盖输入和拒绝 SVG 作为图像输入。
 - Skill 结构校验通过。结构通过不等于审美或行为测试通过。
 
 ## 示例审片
+
+### 真实旅行照片：用户认可
+
+用户先提供街头旅行照片，在用途澄清后要求“先做一个旅行氛围的吧”。使用已安装的 editorial-avatar skill：人物照片提供身份与场景，早期对话画风图提供绘画语言。该画风图未获再分发授权，只在 manifest.json 的 unpublished_inputs 中记录哈希和输入位置；它不是仓库内的公共风格图。此案例与前五组的参考条件不同。
+
+第一次图像调用因 JPEG 的 invalid_image_file 错误未生成结果。将原照转为 PNG 后，用同一份简报调用成功，未作图像质量重试或候选筛选。实际简报见 [generation.prompt.txt](examples/travel/generation.prompt.txt)，人物源图与成片见 README 对照表。公开源图已移除 EXIF、文本等元数据，并核对 PNG 的 IDAT 图像数据未变化。
+
+助手原图检查：侧脸方向、眼镜、短发与背包保留；人物占比提高，路牌、绿荫与柔和日光形成旅行环境肖像。街景、建筑、路牌位置和细节经重构，图中的指路箭头不应用于导航。该图按竖版环境肖像查看，没有作头像圆裁切检查。
+
+用户评价“不错”，并要求将此案例加入 GitHub README，状态为“已生成、助手检查、该用户认可并授权公开”。这是单个真实案例，不能推出身份精确还原、跨人物稳定性或模型优越性。
 
 ### 开源社区头像：Codex
 
@@ -54,7 +65,7 @@
 ### 已检查与待验证范围
 
 - ChatGPT 真实照片上传路径、双图风格参考与后续编辑；当前只完成虚构源图的基本交互实测。
-- README 与头像预览已在 390 CSS 像素宽的浏览器 iframe 中查看，文字正常换行、圆形预览完整；这不是实体手机测试。打印效果尚未查看。
+- README 与头像预览已在 390 CSS 像素宽的浏览器 iframe 中查看。六组示例大表格另完成了桌面显示与窄屏横向滚动检查，能滚动看到成片列；这不是实体手机测试。打印效果尚未查看。
 - 内嵌图像字节与相对路径已通过脚本测试，浏览器视觉检查使用本地 HTTP 页面。尝试打开 file:// 页面时原生浏览器自动化未完成导航，因此直接双击文件的离线显示尚未实测。
 - 独立真人审美评价，以及需要时的短 prompt 对照。
 
@@ -83,4 +94,4 @@ python3 scripts/check_package.py
 npm run check:docs
 ```
 
-已执行上述 Python 检查（3 项单元测试通过、共享 prompt 同步、21 个素材及指令哈希与本地链接一致）；HTML 由 Markdown 生成并作一致性检查。Skill 另通过 Codex skill-creator 的结构验证。行为测试的观察记录见 [chatgpt-observations.json](tests/chatgpt-observations.json)。
+已执行上述 Python 检查（3 项单元测试通过、共享 prompt 同步、25 个素材及指令哈希与本地链接一致）；HTML 由 Markdown 生成并作一致性检查。Skill 另通过 Codex skill-creator 的结构验证。行为测试的观察记录见 [chatgpt-observations.json](tests/chatgpt-observations.json)。
