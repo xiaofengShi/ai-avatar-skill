@@ -1,33 +1,145 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/png" href="assets/logo-v2.png">
-<title>Editorial Avatar · 肖像案例展厅</title>
-<meta name="description" content="Editorial Avatar 的肖像设计案例、原图与结果对照、小尺寸裁切预览。适用于 Codex 和 ChatGPT。">
-<style>
-:root{--paper:#f7f5f0;--ink:#292a26;--muted:#62645c;--line:#d8d7ce;--accent:#8b4638;--white:#fff;--panel:#efeee8}
-*{box-sizing:border-box}html{scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.8 system-ui,-apple-system,sans-serif}a{color:var(--accent);text-underline-offset:4px}a:hover{text-decoration-thickness:2px}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}img{max-width:100%;height:auto}p{margin:16px 0}strong{font-weight:650}.skip{position:absolute;left:16px;top:-100px;background:var(--white);padding:12px;z-index:2}.skip:focus{top:12px}
-.site-header,main,footer{max-width:1280px;margin:auto;padding-inline:clamp(20px,5vw,64px)}.site-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:22px;border-bottom:1px solid var(--line)}.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-size:18px;font-weight:750;letter-spacing:-.5px}.brand-logo{width:36px;height:36px;flex:none;}.brand span{color:var(--accent)}nav{display:flex;align-items:center;flex-wrap:wrap;gap:8px 24px}nav a{display:inline-flex;align-items:center;gap:7px;min-height:44px;text-decoration:none;font-size:14px;font-weight:600}.icon{width:18px;height:18px;vertical-align:middle}.repo{border:1px solid var(--line);border-radius:6px;padding:0 14px;background:var(--white)}
-.hero{padding:56px 0 36px;border-bottom:1px solid var(--line)}.hero .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--accent);font-weight:700;margin:0 0 20px}.hero h1{font-family:Georgia,'Songti SC',serif;font-size:clamp(32px,4vw,54px);font-weight:500;letter-spacing:-1px;line-height:1.3;max-width:840px;margin:0 0 22px}.hero .intro{color:var(--muted);max-width:740px;font-size:17px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.actions a{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;min-height:44px;border:1px solid var(--accent);border-radius:5px;text-decoration:none;font-size:14px;font-weight:650}.actions .primary{background:var(--accent);color:white}
-h2{font-size:26px;line-height:1.4;letter-spacing:-.5px;margin:44px 0 16px}main>p{max-width:1000px;color:var(--muted)}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 28px;margin:28px 0 40px}.case{min-width:0;border-top:2px solid var(--ink);padding-top:16px}.case header{display:flex;gap:14px;align-items:baseline;min-height:108px}.case-number{font-size:12px;color:var(--accent);font-variant-numeric:tabular-nums}.case h3{font-size:19px;line-height:1.6;margin:0}.case h3 br{display:none}.case h3 strong{display:block}.brief{font-size:14px;color:var(--muted);line-height:1.6}.brief br{display:block!important}.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pair figure{margin:0;min-width:0}.pair figure>a{display:block;background:var(--panel);overflow:hidden;border-radius:4px}.pair img{display:block;width:100%;aspect-ratio:1;object-fit:contain;margin:0}.case:first-child .pair img{aspect-ratio:3/4}.pair figcaption{font-size:12px;color:var(--muted);margin-top:7px;letter-spacing:.5px}.observation{font-size:14px;line-height:1.8;margin-top:14px}.observation>a{display:inline-block;min-height:32px;padding-block:3px}.observation strong{color:var(--accent)}
-#preview{border-top:1px solid var(--line);padding-top:34px}.preview-shot{display:block;max-width:720px;margin:24px 0}.preview-shot img{display:block;width:100%;border:1px solid var(--line);border-radius:8px}#start{border-top:1px solid var(--line);padding-top:34px}footer{margin-top:56px;padding-block:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:13px}footer a{color:inherit}details{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:14px}summary{cursor:pointer;font-weight:650;color:var(--ink);min-height:44px;padding-top:8px}details p{max-width:980px}
-@media(max-width:760px){.gallery{grid-template-columns:1fr;gap:32px}.site-header{align-items:flex-start;flex-direction:column;gap:6px;padding-block:14px}nav{gap:4px 18px}.hero{padding:30px 0}.case header{min-height:0;padding-bottom:16px}footer{flex-direction:column}.pair{gap:8px}h2{font-size:24px}.hero .intro{font-size:16px}}
-@media print{body{background:white}.site-header nav,.actions,.skip{display:none}.hero{padding:12px 0}.gallery{display:block}.case{break-inside:avoid;margin-bottom:24px}.pair{max-width:560px}details{display:block}details::details-content{content-visibility:visible}a{color:inherit}footer{margin-top:20px}}
-</style>
+<title>Editorial Avatar — Purpose-driven AI portrait design for Codex &amp; ChatGPT</title>
+<meta name="description" content="Give one photo and its purpose; AI acts as designer and photographer. A Codex skill and two-stage ChatGPT prompt for purpose-driven AI avatar and profile picture design, with real-size circular crop previews.">
+<link rel="canonical" href="https://xiaofengshi.github.io/ai-avatar-skill/">
+<link rel="alternate" hreflang="en" href="https://xiaofengshi.github.io/ai-avatar-skill/">
+<link rel="alternate" hreflang="zh-CN" href="https://xiaofengshi.github.io/ai-avatar-skill/zh.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Editorial Avatar">
+<meta property="og:title" content="Editorial Avatar — One photo. The right portrait for every purpose.">
+<meta property="og:description" content="Purpose-driven AI avatar &amp; profile picture design: a Codex skill and ChatGPT prompt that design composition, styling, lighting and palette around where your portrait will live.">
+<meta property="og:url" content="https://xiaofengshi.github.io/ai-avatar-skill/">
+<meta property="og:image" content="https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview-screenshot.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/landing.css">
 </head>
 <body>
-<a class="skip" href="#main">跳到案例内容</a>
-<header class="site-header"><a class="brand" href="./"><img class="brand-logo" src="assets/logo-v2.png" width="36" height="36" alt=""><span style="color:inherit">Editorial <span>Avatar</span></span></a><nav aria-label="主导航"><a href="#examples">案例对照</a><a href="#preview">裁切预览</a><a href="https://github.com/xiaofengShi/ai-avatar-skill#readme">使用文档 ↗</a><a class="repo" href="https://github.com/xiaofengShi/ai-avatar-skill"><img class="icon" src="assets/icons/code.svg" alt="">GitHub ↗</a></nav></header>
-<main id="main"><section class="hero"><p class="eyebrow">Editorial Avatar / 案例展厅</p><h1>从一张照片，到适合你的肖像。</h1>
-<p class="intro">同一张照片，可以服务不同的用途。这里展示用途如何影响构图、服装、配色，以及一次修改如何改变结果。</p>
-<div class="actions"><a class="primary" href="#examples">浏览案例 ↓</a><a href="https://github.com/xiaofengShi/ai-avatar-skill#readme">开始使用 ↗</a></div></section><h2 id="examples">案例对照</h2><p><strong>6 组示例，按用途看设计。</strong> 旅行插画来自用户授权公开的真实照片，成片已获该用户认可；其余 5 组覆盖 2 个 AI 生成的虚构人物。所有成片均由 Codex 内置图像工具生成。每组原图与结果等大展示，点击图片可查看原尺寸。</p>
-<div class="gallery"><article class="case"><header><span class="case-number">01</span><div><h3><strong>旅行氛围插画</strong></h3><div class="brief">生活照 → 环境肖像<br>保留侧脸、眼镜与旅行感</div></div></header><div class="pair"><figure><a href="examples/travel/source.png"><img loading="lazy" decoding="async" src="examples/travel/source.png" alt="真实旅行照片" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/travel/illustration.png"><img loading="lazy" decoding="async" src="examples/travel/illustration.png" alt="用户认可的旅行氛围插画" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation"><strong>用户已认可并授权公开。</strong> 拉近人物，以路牌、绿荫与柔和日光交代旅行场景。街景经过重构，不是现场复原。<br><a href="examples/travel/request.txt">请求</a> · <a href="examples/travel/generation.prompt.txt">实际指令</a></div></article><article class="case"><header><span class="case-number">02</span><div><h3><strong>GitHub / Hugging Face</strong></h3><div class="brief">自然、容易接近<br>保留眼镜</div></div></header><div class="pair"><figure><a href="examples/developer/source.png"><img loading="lazy" decoding="async" src="examples/developer/source.png" alt="虚构男性原始照片" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/developer/avatar.png"><img loading="lazy" decoding="async" src="examples/developer/avatar.png" alt="半写实社区头像" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">墨蓝便装配浅蓝灰背景，保留灰白短发与年龄感。皮肤纹理仍偏细密。<br><a href="examples/developer/request.txt">请求</a> · <a href="examples/developer/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html">圆裁切预览</a></div></article><article class="case"><header><span class="case-number">03</span><div><h3><strong>大会演讲者介绍</strong></h3><div class="brief">保留年龄、肤色<br>与短卷发</div></div></header><div class="pair"><figure><a href="examples/speaker/source.png"><img loading="lazy" decoding="async" src="examples/speaker/source.png" alt="虚构女性原始照片" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/speaker/avatar.png"><img loading="lazy" decoding="async" src="examples/speaker/avatar.png" alt="梅紫外套的演讲者头像" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">梅紫外套配灰紫背景，神态平静亲和。五官略有重绘。<br><a href="examples/speaker/request.txt">请求</a> · <a href="examples/speaker/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/ai-avatar-skill/examples/speaker/preview.html">圆裁切预览</a></div></article><article class="case"><header><span class="case-number">04</span><div><h3><strong>只去掉眼镜</strong></h3><div class="brief">保留构图、神态<br>服装、背景和画风</div></div></header><div class="pair"><figure><a href="examples/developer/avatar.png"><img loading="lazy" decoding="async" src="examples/developer/avatar.png" alt="带眼镜的编辑基底" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/remove-glasses/avatar.png"><img loading="lazy" decoding="async" src="examples/remove-glasses/avatar.png" alt="去眼镜的社区头像" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">镜框、鼻托与镜腿已去除，整体设计接近原版。眼周存在补绘，不是遮挡细节的真实还原。<br><a href="examples/remove-glasses/request.txt">请求</a> · <a href="examples/remove-glasses/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/ai-avatar-skill/examples/remove-glasses/preview.html">圆裁切预览</a></div></article><article class="case"><header><span class="case-number">05</span><div><h3><strong>深色研究团队主页</strong></h3><div class="brief">同一人物适配新用途<br>保留眼镜和年龄感</div></div></header><div class="pair"><figure><a href="examples/developer/source.png"><img loading="lazy" decoding="async" src="examples/developer/source.png" alt="用于团队头像的虚构源照片" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/researcher/avatar.png"><img loading="lazy" decoding="async" src="examples/researcher/avatar.png" alt="深绿色研究团队头像" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">深绿便装、蓝绿背景与柔和侧光。40 px 下肩部对比偏弱，脸部仍可辨；不能据此认为优于社区版。<br><a href="examples/researcher/request.txt">请求</a> · <a href="examples/researcher/generation.prompt.txt">实际指令</a> · <a href="https://xiaofengshi.github.io/ai-avatar-skill/examples/researcher/preview.html">圆裁切预览</a></div></article><article class="case"><header><span class="case-number">06</span><div><h3><strong>微笑与姿态修正</strong></h3><div class="brief">头颈肩整体协调<br>保留微笑、服装与配色</div></div></header><div class="pair"><figure><a href="examples/speaker/avatar.png"><img loading="lazy" decoding="async" src="examples/speaker/avatar.png" alt="表情修改前的演讲者头像" width="220"></a><figcaption>输入照片 / 编辑基底</figcaption></figure><figure><a href="examples/speaker-smile/avatar-v2.png"><img loading="lazy" decoding="async" src="examples/speaker-smile/avatar-v2.png" alt="头颈肩整体调整后的修正版，待用户确认" width="220"></a><figcaption>生成结果</figcaption></figure></div><div class="observation">首版被用户指出头身方向不协调；重作一次，减小歪头幅度并调整肩线、领口。<strong>修正版待用户确认。</strong><br><a href="examples/speaker-smile/avatar.png">首版问题图</a> · <a href="examples/speaker-smile/feedback.txt">反馈</a> · <a href="examples/speaker-smile/correction.prompt.txt">修正指令</a> · <a href="https://xiaofengshi.github.io/ai-avatar-skill/examples/speaker-smile/preview-v2.html">圆裁切预览</a></div></article></div><details><summary>试验过程与已知限制</summary><p>示例完成于 2026-09-21 至 2026-09-22。五组虚构人物案例首版均一次生成；其中微笑案例被用户指出姿态问题，已追加一次修正并保留首版记录；旅行照片首次因 JPEG 读取失败未出图，转为 PNG 后用相同简报生成一张成片。旅行版使用了早期对话的画风参考，该参考未获再分发授权、未收入仓库，并非本项目附带的公共风格图。</p>
-<p>这些是助手按 skill 流程设计简报后执行的生成与编辑案例，尚未作独立真人评审或同条件重复测试；一位用户认可一张图不代表稳定性验证。完整输入分工、审片观察与边界见 <a href="validation.html">验证记录</a> 和 <a href="https://github.com/xiaofengShi/ai-avatar-skill/blob/main/ASSETS.md">素材说明</a>。</p>
-</details><h2 id="preview">小尺寸，也值得认真看</h2><p><a class="preview-shot" href="examples/developer/preview.html"><img src="examples/developer/preview-screenshot.png" alt="头像预览实际截图：浅色与深色背景下的 40、64、128、256 px 圆形裁切"></a></p>
-<p>上图为虚构人物示例的实际预览截图。截图会随页面宽度缩放；检查真实 CSS 尺寸时，请<a href="https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html">打开完整预览</a>并保持浏览器 100% 缩放。</p>
-<h2 id="start">从这里开始</h2><p><a href="https://github.com/xiaofengShi/ai-avatar-skill#codex">在 Codex 中激活 skill</a> · <a href="https://github.com/xiaofengShi/ai-avatar-skill#chatgpt">使用 ChatGPT prompt</a></p>
-<p>把照片和用途交给助手。安装、功能、使用要求与贡献方式见 <a href="https://github.com/xiaofengShi/ai-avatar-skill#readme">GitHub README</a>。</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="./"><img class="brand-logo" src="assets/logo-v2.png" width="36" height="36" alt=""><span>Editorial <span class="word">Avatar</span></span></a>
+  <nav aria-label="Main navigation">
+    <a href="showcase.html">Cases</a>
+    <a href="showcase.html#preview">Crop preview</a>
+    <a href="https://github.com/xiaofengShi/ai-avatar-skill#readme">Docs ↗</a>
+    <a class="lang" href="zh.html" hreflang="zh-CN" lang="zh-CN">中文</a>
+    <a class="repo" href="https://github.com/xiaofengShi/ai-avatar-skill"><img class="icon" src="assets/icons/code.svg" alt="">GitHub ↗</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Purpose-driven portrait workflow · Codex skill + ChatGPT prompt</p>
+      <h1>One photo. The right portrait for every purpose.</h1>
+      <p class="intro">Give AI a photo and tell it where the portrait will live. Editorial Avatar clarifies the purpose first, then designs composition, styling, lighting, and palette — like a designer and a photographer in one conversation.</p>
+      <div class="actions">
+        <a class="primary" href="https://github.com/xiaofengShi/ai-avatar-skill#readme">Get started ↗</a>
+        <a href="showcase.html">Browse the cases</a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <a href="examples/developer/source.png"><img src="examples/developer/source.png" alt="Fictional source photo of a man" fetchpriority="high" decoding="async"></a>
+      <a href="examples/developer/avatar.png"><img src="examples/developer/avatar.png" alt="Semi-realistic illustrated avatar designed for GitHub and Hugging Face" fetchpriority="high" decoding="async"></a>
+      <figcaption>Source photo → avatar designed for GitHub / Hugging Face (fictional person)</figcaption>
+    </figure>
+  </section>
+
+  <div class="stats" role="list">
+    <div class="stat" role="listitem"><b>6</b><span>documented cases</span></div>
+    <div class="stat" role="listitem"><b>2</b><span>entry points · Codex &amp; ChatGPT</span></div>
+    <div class="stat" role="listitem"><b>4</b><span>crop sizes · 40–256 px</span></div>
+    <div class="stat" role="listitem"><b>MIT</b><span>licensed workflow</span></div>
+  </div>
+
+  <section>
+    <div class="section-head"><span class="no">01 / WHAT IT DOES</span><h2>Designed around the purpose, not the filter.</h2></div>
+    <p class="section-lede">Most avatar tools ask “which style?”. Editorial Avatar asks “where will this portrait live?” — a conference page, a dark-themed team site, and a developer profile each get a different design.</p>
+    <div class="cards">
+      <div class="card"><h3>Purpose-driven design</h3><p>Provide a photo and its use context. If the purpose is unclear, the assistant asks first — then designs composition, styling, lighting, and palette.</p></div>
+      <div class="card"><h3>Style &amp; local edits</h3><p>Semi-realistic illustration by default; request other art styles, keep glasses, or adjust expressions — and keep iterating on a version you approve.</p></div>
+      <div class="card"><h3>Real-size crop check</h3><p>Circular crops at 40, 64, 128, and 256 px on light and dark backgrounds, so the avatar is checked at the sizes people actually see.</p></div>
+      <div class="card"><h3>Two entry points</h3><p>A Codex skill that runs clarification → design → generation → preview end-to-end, and a two-stage ChatGPT prompt that keeps plan and generation separate.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">02 / HOW IT WORKS</span><h2>From photo to portrait in four steps.</h2></div>
+    <ol class="steps">
+      <li><h3>Attach photo &amp; purpose</h3><p>One photo plus where it will be used — “for GitHub and Hugging Face, keep my glasses” is enough to start.</p></li>
+      <li><h3>Get a design brief</h3><p>The assistant clarifies the purpose if needed, then designs composition, wardrobe, light, and palette for that context.</p></li>
+      <li><h3>Generate</h3><p>Your image-capable Codex or ChatGPT environment produces the portrait. The project brings the workflow, not a model or quota.</p></li>
+      <li><h3>Preview &amp; iterate</h3><p>Check circular crops at real avatar sizes, then refine the approved version — remove glasses, adjust a smile, restyle for a new context.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">03 / CASES</span><h2>Same person, different purposes.</h2></div>
+    <p class="section-lede">Every case shows the input and the result at equal size, with the actual request and generation prompt on record. All portraits were generated by Codex’s built-in image tool.</p>
+    <div class="cases">
+      <article class="case travel">
+        <div class="pair"><a href="examples/travel/source.png"><img src="examples/travel/source.png" alt="Real travel photo" loading="lazy" decoding="async"></a><a href="examples/travel/illustration.png"><img src="examples/travel/illustration.png" alt="Travel-mood illustration approved by the user" loading="lazy" decoding="async"></a></div>
+        <h3>Travel-mood illustration</h3>
+        <p class="brief">Real photo → environmental portrait. Approved and cleared for publication by the user.</p>
+      </article>
+      <article class="case">
+        <div class="pair"><a href="examples/developer/source.png"><img src="examples/developer/source.png" alt="Fictional source photo" loading="lazy" decoding="async"></a><a href="examples/developer/avatar.png"><img src="examples/developer/avatar.png" alt="Community avatar in ink-blue casual wear" loading="lazy" decoding="async"></a></div>
+        <h3>GitHub / Hugging Face</h3>
+        <p class="brief">Approachable, glasses kept. Ink-blue casual wear on a light blue-grey background.</p>
+      </article>
+      <article class="case">
+        <div class="pair"><a href="examples/speaker/source.png"><img src="examples/speaker/source.png" alt="Fictional source photo of a woman" loading="lazy" decoding="async"></a><a href="examples/speaker/avatar.png"><img src="examples/speaker/avatar.png" alt="Speaker avatar in a plum jacket" loading="lazy" decoding="async"></a></div>
+        <h3>Conference speaker page</h3>
+        <p class="brief">Age, skin tone, and curls kept. Plum jacket on a grey-violet background, calm and warm.</p>
+      </article>
+    </div>
+    <a class="more-link" href="showcase.html">All six cases, with prompts and observations →</a>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">04 / CROP PREVIEW</span><h2>Small sizes, taken seriously.</h2></div>
+    <p class="section-lede">Avatars are seen at 40 px more often than at full size. The bundled tool renders circular crops at 40–256 px on light and dark backgrounds — offline, without modifying or uploading the original.</p>
+    <a class="preview-shot" href="examples/developer/preview.html"><img src="examples/developer/preview-screenshot.png" alt="Actual preview screenshot: circular crops at 40, 64, 128 and 256 px on light and dark backgrounds" loading="lazy" decoding="async"></a>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">05 / GET STARTED</span><h2>Two entry points, one workflow.</h2></div>
+    <div class="start">
+      <div class="col">
+        <span class="tag">Codex</span>
+        <h3>Install once, then call by name</h3>
+        <pre><code>$skill-installer Install the skill at
+https://github.com/xiaofengShi/ai-avatar-skill/tree/main/skills/editorial-avatar
+
+$editorial-avatar This photo is for my GitHub and
+Hugging Face avatar. Keep my glasses; design
+everything else yourself.</code></pre>
+        <p class="note">Requires image generation in your Codex environment. <a href="https://github.com/xiaofengShi/ai-avatar-skill#codex">Full instructions ↗</a></p>
+      </div>
+      <div class="col">
+        <span class="tag">ChatGPT</span>
+        <h3>Copy the two-stage prompt</h3>
+        <p class="note" style="margin-top:14px">Paste the plan-stage block, attach a photo and its purpose, review the design plan, then send the generate block. Splitting plan and generation keeps purpose clarification from being skipped.</p>
+        <div class="actions"><a href="https://github.com/xiaofengShi/ai-avatar-skill/blob/main/prompts/chatgpt.md">Open the ChatGPT prompt ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">06 / HONEST STATUS</span><h2>What is verified — and what is not.</h2></div>
+    <div class="honest">
+      <p>The gallery covers six cases: five fictional characters generated in one pass each, one approved real travel photo, and one documented correction round. That is evidence of a workable workflow — not of stable quality or superiority over short prompts.</p>
+      <p>Full inputs, review notes, and known limits: <a href="validation.html">validation log</a> · <a href="https://github.com/xiaofengShi/ai-avatar-skill/blob/main/ASSETS.md">assets &amp; licensing</a>.</p>
+    </div>
+  </section>
 </main>
-<footer><span>Editorial Avatar · 肖像设计工作流</span><span><a href="https://github.com/xiaofengShi/ai-avatar-skill">GitHub</a> · <a href="validation.html">验证记录</a> · <a href="https://github.com/xiaofengShi/ai-avatar-skill/blob/main/ASSETS.md">素材与授权</a></span></footer>
-</body></html>
+<footer class="site-footer">
+  <span>Editorial Avatar · Purpose-driven portrait workflow · <a href="https://github.com/xiaofengShi/ai-avatar-skill/blob/main/LICENSE">MIT</a></span>
+  <span><a href="https://github.com/xiaofengShi/ai-avatar-skill">GitHub</a> · <a href="showcase.html">Cases</a> · <a href="validation.html">Validation</a> · <a href="https://github.com/xiaofengShi/ai-avatar-skill/issues">Issues</a> · <a href="zh.html" hreflang="zh-CN" lang="zh-CN">中文</a></span>
+</footer>
+</body>
+</html>

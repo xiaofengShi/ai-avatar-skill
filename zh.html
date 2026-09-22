@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="assets/logo-v2.png">
+<title>Editorial Avatar — 按用途设计的 AI 肖像工作流（Codex / ChatGPT）</title>
+<meta name="description" content="给一张照片，说明用途，让 AI 作为设计师与摄影师完成肖像设计。以 Codex skill 或两阶段 ChatGPT prompt 使用，附带真实尺寸圆形裁切预览。">
+<link rel="canonical" href="https://xiaofengshi.github.io/ai-avatar-skill/zh.html">
+<link rel="alternate" hreflang="en" href="https://xiaofengshi.github.io/ai-avatar-skill/">
+<link rel="alternate" hreflang="zh-CN" href="https://xiaofengshi.github.io/ai-avatar-skill/zh.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Editorial Avatar">
+<meta property="og:title" content="Editorial Avatar — 一张照片，为每个用途设计合适的肖像。">
+<meta property="og:description" content="按用途设计的 AI 头像与肖像工作流：Codex skill 与 ChatGPT prompt，围绕使用场景设计构图、造型、光线与配色。">
+<meta property="og:url" content="https://xiaofengshi.github.io/ai-avatar-skill/zh.html">
+<meta property="og:image" content="https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview-screenshot.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/landing.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+<header class="site-header">
+  <a class="brand" href="./"><img class="brand-logo" src="assets/logo-v2.png" width="36" height="36" alt=""><span>Editorial <span class="word">Avatar</span></span></a>
+  <nav aria-label="主导航">
+    <a href="showcase.html">案例对照</a>
+    <a href="showcase.html#preview">裁切预览</a>
+    <a href="https://github.com/xiaofengShi/ai-avatar-skill#readme">使用文档 ↗</a>
+    <a class="lang" href="index.html" hreflang="en" lang="en">EN</a>
+    <a class="repo" href="https://github.com/xiaofengShi/ai-avatar-skill"><img class="icon" src="assets/icons/code.svg" alt="">GitHub ↗</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">按用途设计的肖像工作流 · Codex skill + ChatGPT prompt</p>
+      <h1>一张照片，为每个用途设计合适的肖像。</h1>
+      <p class="intro">把照片和使用场景交给 AI。Editorial Avatar 先澄清用途，再像设计师与摄影师一样设计构图、造型、光线与配色，并生成结果。</p>
+      <div class="actions">
+        <a class="primary" href="https://github.com/xiaofengShi/ai-avatar-skill#readme">开始使用 ↗</a>
+        <a href="showcase.html">浏览案例</a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <a href="examples/developer/source.png"><img src="examples/developer/source.png" alt="虚构男性原始照片" fetchpriority="high" decoding="async"></a>
+      <a href="examples/developer/avatar.png"><img src="examples/developer/avatar.png" alt="为 GitHub 和 Hugging Face 设计的半写实头像" fetchpriority="high" decoding="async"></a>
+      <figcaption>原始照片 → 为 GitHub / Hugging Face 设计的头像（虚构人物）</figcaption>
+    </figure>
+  </section>
+
+  <div class="stats" role="list">
+    <div class="stat" role="listitem"><b>6</b><span>组完整记录的案例</span></div>
+    <div class="stat" role="listitem"><b>2</b><span>种入口 · Codex 与 ChatGPT</span></div>
+    <div class="stat" role="listitem"><b>4</b><span>档裁切尺寸 · 40–256 px</span></div>
+    <div class="stat" role="listitem"><b>MIT</b><span>开源工作流</span></div>
+  </div>
+
+  <section>
+    <div class="section-head"><span class="no">01 / 能做什么</span><h2>围绕用途设计，而不是套滤镜。</h2></div>
+    <p class="section-lede">多数头像工具问“要什么风格”；Editorial Avatar 先问“这张肖像用在哪里”——大会主页、深色团队页和开发者社区，各自对应不同的设计。</p>
+    <div class="cards">
+      <div class="card"><h3>按用途设计</h3><p>提供照片与使用场景；用途不明确时先澄清，再设计构图、造型、光线与配色。</p></div>
+      <div class="card"><h3>风格与局部修改</h3><p>默认半写实手绘，可指定其他画风、保留眼镜或调整表情，并在认可版本上继续修改。</p></div>
+      <div class="card"><h3>真实尺寸裁切检查</h3><p>以 40、64、128、256 px 圆形裁切和深浅两种背景检查头像——按人们真正看到的尺寸验收。</p></div>
+      <div class="card"><h3>两种使用入口</h3><p>Codex skill 连续完成澄清、设计、生成与预览；ChatGPT 两阶段 prompt 把方案与生成分开，避免跳过用途澄清。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">02 / 工作方式</span><h2>从照片到肖像，四步完成。</h2></div>
+    <ol class="steps">
+      <li><h3>附上照片和用途</h3><p>一张照片加上使用场景即可开始，例如“用于 GitHub 和 Hugging Face，保留眼镜”。</p></li>
+      <li><h3>取得设计简报</h3><p>用途不明时助手先提问；明确后针对场景设计构图、服装、光线与配色。</p></li>
+      <li><h3>生成肖像</h3><p>由你的 Codex 或 ChatGPT 环境中的图像能力出图。本项目提供工作流，不提供模型或额度。</p></li>
+      <li><h3>预览并迭代</h3><p>检查真实尺寸的圆形裁切，在认可的版本上继续修改：去眼镜、调整微笑、适配新场景。</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">03 / 案例</span><h2>同一个人，不同用途。</h2></div>
+    <p class="section-lede">每组案例等大展示输入与结果，并保留实际请求与生成指令。所有成片均由 Codex 内置图像工具生成。</p>
+    <div class="cases">
+      <article class="case travel">
+        <div class="pair"><a href="examples/travel/source.png"><img src="examples/travel/source.png" alt="真实旅行照片" loading="lazy" decoding="async"></a><a href="examples/travel/illustration.png"><img src="examples/travel/illustration.png" alt="用户认可的旅行氛围插画" loading="lazy" decoding="async"></a></div>
+        <h3>旅行氛围插画</h3>
+        <p class="brief">真实照片 → 环境肖像。已获用户认可并授权公开。</p>
+      </article>
+      <article class="case">
+        <div class="pair"><a href="examples/developer/source.png"><img src="examples/developer/source.png" alt="虚构男性原始照片" loading="lazy" decoding="async"></a><a href="examples/developer/avatar.png"><img src="examples/developer/avatar.png" alt="墨蓝便装社区头像" loading="lazy" decoding="async"></a></div>
+        <h3>GitHub / Hugging Face</h3>
+        <p class="brief">自然、容易接近，保留眼镜。墨蓝便装配浅蓝灰背景。</p>
+      </article>
+      <article class="case">
+        <div class="pair"><a href="examples/speaker/source.png"><img src="examples/speaker/source.png" alt="虚构女性原始照片" loading="lazy" decoding="async"></a><a href="examples/speaker/avatar.png"><img src="examples/speaker/avatar.png" alt="梅紫外套的演讲者头像" loading="lazy" decoding="async"></a></div>
+        <h3>大会演讲者介绍</h3>
+        <p class="brief">保留年龄、肤色与短卷发。梅紫外套配灰紫背景，神态平静亲和。</p>
+      </article>
+    </div>
+    <a class="more-link" href="showcase.html">全部六组案例，含指令与观察记录 →</a>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">04 / 裁切预览</span><h2>小尺寸，也值得认真看。</h2></div>
+    <p class="section-lede">头像更多以 40 px 被看到，而不是原尺寸。附带工具生成 40–256 px 圆形裁切与深浅背景对照——离线运行，不修改、不上传原图。</p>
+    <a class="preview-shot" href="examples/developer/preview.html"><img src="examples/developer/preview-screenshot.png" alt="头像预览实际截图：浅色与深色背景下的 40、64、128、256 px 圆形裁切" loading="lazy" decoding="async"></a>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">05 / 从这里开始</span><h2>两种入口，同一套工作流。</h2></div>
+    <div class="start">
+      <div class="col">
+        <span class="tag">Codex</span>
+        <h3>安装一次，按名调用</h3>
+        <pre><code>$skill-installer 请安装
+https://github.com/xiaofengShi/ai-avatar-skill/tree/main/skills/editorial-avatar
+中的 skill。
+
+$editorial-avatar 这张图用于 GitHub 和 Hugging Face
+的头像，保留眼镜，其余由你设计。</code></pre>
+        <p class="note">需要 Codex 环境具备图像生成能力。<a href="https://github.com/xiaofengShi/ai-avatar-skill#codex">完整说明 ↗</a></p>
+      </div>
+      <div class="col">
+        <span class="tag">ChatGPT</span>
+        <h3>复制两阶段 prompt</h3>
+        <p class="note" style="margin-top:14px">粘贴“方案阶段”代码块，附上照片与用途，看过方案后再发送“按方案生成”。方案与生成分开，避免图像请求跳过用途澄清。</p>
+        <div class="actions"><a href="https://github.com/xiaofengShi/ai-avatar-skill/blob/main/prompts/chatgpt.md">打开 ChatGPT prompt ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="no">06 / 诚实状态</span><h2>验证了什么，还没有验证什么。</h2></div>
+    <div class="honest">
+      <p>案例区覆盖六组示例：五组虚构人物首版一次生成、一组经用户认可的真实旅行照片、一次有记录的修正。这证明工作流可行，但不证明画质稳定，也不证明优于简短 prompt。</p>
+      <p>完整输入分工、审片观察与边界：<a href="validation.html">验证记录</a> · <a href="https://github.com/xiaofengShi/ai-avatar-skill/blob/main/ASSETS.md">素材与授权</a>。</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <span>Editorial Avatar · 按用途设计的肖像工作流 · <a href="https://github.com/xiaofengShi/ai-avatar-skill/blob/main/LICENSE">MIT</a></span>
+  <span><a href="https://github.com/xiaofengShi/ai-avatar-skill">GitHub</a> · <a href="showcase.html">案例</a> · <a href="validation.html">验证记录</a> · <a href="https://github.com/xiaofengShi/ai-avatar-skill/issues">问题反馈</a> · <a href="index.html" hreflang="en" lang="en">EN</a></span>
+</footer>
+</body>
+</html>

@@ -17,7 +17,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 @media print{body{background:white}main{padding:0}h2,h3{break-after:avoid}.table-scroll{overflow:visible}table{min-width:0;font-size:12px}tr{break-inside:avoid}img{max-height:85mm;width:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}}
 `;
 for (const [source, target, title] of [
-  ['SHOWCASE.md', 'index.html', 'Editorial Avatar'],
+  ['SHOWCASE.md', 'showcase.html', 'Editorial Avatar · 案例展厅'],
   ['VALIDATION.md', 'validation.html', 'Editorial Avatar · 验证记录'],
 ]) {
   let body = marked.parse(readFileSync(resolve(root, source), 'utf8'))

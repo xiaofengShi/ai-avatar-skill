@@ -52,7 +52,7 @@ This skill requires image generation capability in the current Codex environment
 
 The Codex skill calls the bundled preview tool. You can also ask in conversation: "Check this avatar at small sizes and circular crops, and show me a preview."
 
-[See crop examples on the homepage](https://xiaofengshi.github.io/ai-avatar-skill/#preview) · [Open a real preview](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)
+[See crop examples on the showcase page](https://xiaofengshi.github.io/ai-avatar-skill/showcase.html#preview) · [Open a real preview](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)
 
 Open the generated HTML in a browser at 100% zoom. It includes circular crops at 40, 64, 128, and 256 CSS px, light and dark backgrounds, and the full original image; images are embedded for offline sharing. It does not modify the original, upload files, or judge whether the result looks good. The preview embeds the original image data — sharing the preview shares the image. Existing output is refused by default; add `--force` to replace it.
 
@@ -77,7 +77,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 ```
 
-This README covers features and usage; [SHOWCASE.md](SHOWCASE.md) maintains the case gallery and generates the homepage `index.html`; [VALIDATION.md](VALIDATION.md) generates `validation.html`. The web template and styles live in `scripts/showcase.html`. HTML is generated with Node 20+ and the dev dependency `marked`; regular use does not require installing them. GitHub Pages publishes the generated HTML from the `main` branch root, with `.nojekyll` preserving original static file paths. After updating docs, regenerate the HTML and commit it together:
+This README covers features and usage; [SHOWCASE.md](SHOWCASE.md) maintains the case gallery and generates `showcase.html`; the landing pages `index.html` (English) and `zh.html` (中文) are hand-authored; [VALIDATION.md](VALIDATION.md) generates `validation.html`. The web template and styles live in `scripts/showcase.html`. HTML is generated with Node 20+ and the dev dependency `marked`; regular use does not require installing them. GitHub Pages publishes the generated HTML from the `main` branch root, with `.nojekyll` preserving original static file paths. After updating docs, regenerate the HTML and commit it together:
 
 ```bash
 npm ci
@@ -145,7 +145,7 @@ $skill-installer 请安装 https://github.com/xiaofengShi/ai-avatar-skill/tree/m
 
 Codex skill 会调用附带的预览工具。你也可以在对话中要求：“检查这版头像的小尺寸和圆形裁切，并给我预览。”
 
-[查看主页中的裁切展示](https://xiaofengshi.github.io/ai-avatar-skill/#preview) · [打开实际预览](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)
+[查看案例页中的裁切展示](https://xiaofengshi.github.io/ai-avatar-skill/showcase.html#preview) · [打开实际预览](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)
 
 用浏览器打开生成的 HTML，以 100% 缩放查看。包含 40、64、128、256 CSS 像素的圆形裁切、深浅底色与完整原图；图片内嵌，可离线分享。它不修改原图、不上传文件，也不会自动判断好不好看。生成的预览包含原始图片数据，分享预览等于分享图片。已有输出默认拒绝覆盖；需要替换时添加 `--force`。
 
@@ -170,7 +170,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 ```
 
-README 维护功能与使用说明；[SHOWCASE.md](SHOWCASE.md) 维护案例展示，生成项目主页 `index.html`；[VALIDATION.md](VALIDATION.md) 生成 `validation.html`。网页模板与样式位于 `scripts/showcase.html`。HTML 通过 Node 20+ 与开发依赖 `marked` 生成，普通使用不需要安装这些依赖。GitHub Pages 从 `main` 分支根目录发布已生成的 HTML，`.nojekyll` 保留静态文件的原始路径；更新文档后应重新生成 HTML 并一并提交：
+README 维护功能与使用说明；[SHOWCASE.md](SHOWCASE.md) 维护案例展示，生成案例页 `showcase.html`；落地页 `index.html`（英文）与 `zh.html`（中文）为手工维护；[VALIDATION.md](VALIDATION.md) 生成 `validation.html`。网页模板与样式位于 `scripts/showcase.html`。HTML 通过 Node 20+ 与开发依赖 `marked` 生成，普通使用不需要安装这些依赖。GitHub Pages 从 `main` 分支根目录发布已生成的 HTML，`.nojekyll` 保留静态文件的原始路径；更新文档后应重新生成 HTML 并一并提交：
 
 ```bash
 npm ci
