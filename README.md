@@ -1,6 +1,4 @@
-[<img src="assets/icons/gallery.svg" width="18" height="18" alt=""> **项目主页 · 查看案例与前后对照 →**](https://xiaofengshi.github.io/editorial-avatar/)
-
-# Editorial Avatar
+<h1 align="center">Editorial Avatar · <a href="https://xiaofengshi.github.io/editorial-avatar/">项目主页</a></h1>
 
 给一张照片，说明用途，让 AI 作为设计师与摄影师完成肖像设计。
 
