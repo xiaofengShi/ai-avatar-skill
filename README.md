@@ -39,29 +39,29 @@
 
 ChatGPT 入口分成方案、生成两条消息，避免图像请求跳过用途澄清。未说明用途时，预期先问用途；明确后由助手设计。Codex 入口在用途明确后连续执行设计与生成。ChatGPT 无法凭本地文件路径读取照片，需要实际附图。图像生成、上传与编辑能力由你的账户及当前界面提供；本项目不提供生成额度。[官方图像使用说明](https://help.openai.com/en/articles/11084440)。
 
-## Codex：安装完整 skill 文件夹
+## Codex：直接激活 skill
 
-下载本仓库后，在仓库根目录执行以下命令。命令使用 Python 3，目标已存在时拒绝覆盖：
-
-```bash
-python3 -c 'from pathlib import Path; import shutil; d=Path.home()/".agents/skills/editorial-avatar"; d.parent.mkdir(parents=True, exist_ok=True); shutil.copytree("skills/editorial-avatar", d)'
-```
-
-安装位置依照 [Codex 本地 skills 文档](https://learn.chatgpt.com/docs/build-skills)。如果你的环境已在其他目录安装同名 skill，应先决定更新哪份，避免同时安装两个版本。安装后在可选 skills 中确认 `editorial-avatar`；未出现时重新启动 Codex。
-
-附上照片并发送：
+已安装后，在 Codex 输入框中选择 `editorial-avatar`，附上照片并说明用途；也可以直接发送：
 
 ```text
 $editorial-avatar 这张图用于 GitHub 和 Hugging Face 的头像，保留眼镜，其余由你设计。
 ```
 
-此 skill 不会为 Codex 增加图像生成能力：需要当前环境已提供 `image_gen`。缺少该工具时只能得到创作简报，不能称为已完成图像生成。预览脚本只需 Python 3 标准库，无需 Node 或 API key；维护检查脚本要求 Python 3.9+。
+激活后由 Codex 读取 skill，完成用途澄清、肖像设计、图像生成与头像预览。日常使用只需照片和需求，无需手动运行 Python 或复制文件。
+
+**首次使用、尚未安装时**，先在 Codex 中调用安装 skill：
+
+```text
+$skill-installer 请安装 https://github.com/xiaofengShi/editorial-avatar/tree/main/skills/editorial-avatar 中的 skill。
+```
+
+安装完成后，在下一轮对话选择或输入 `$editorial-avatar` 使用。已经安装的用户直接激活即可。安装和调用是两个步骤，仓库链接本身不会自动注册 skill。
+
+此 skill 需要当前 Codex 环境已提供图像生成能力。缺少该能力时，助手会说明限制并提供创作简报。调用方式见 [Codex skills 文档](https://learn.chatgpt.com/docs/build-skills)。
 
 ## 检查小尺寸与圆形裁切
 
-```bash
-python3 skills/editorial-avatar/scripts/preview_avatar.py avatar.png --output preview.html
-```
+Codex skill 会调用附带的预览工具。你也可以在对话中要求：“检查这版头像的小尺寸和圆形裁切，并给我预览。”
 
 用浏览器打开生成的 HTML，以 100% 缩放查看。包含 40、64、128、256 CSS 像素的圆形裁切、深浅底色与完整原图；图片内嵌，可离线分享。它不修改原图、不上传文件，也不会自动判断好不好看。生成的预览包含原始图片数据，分享预览等于分享图片。已有输出默认拒绝覆盖；需要替换时添加 `--force`。
 
@@ -70,6 +70,12 @@ python3 skills/editorial-avatar/scripts/preview_avatar.py avatar.png --output pr
 ## 维护与贡献
 
 核心设计逻辑只维护在 [workflow.md](skills/editorial-avatar/references/workflow.md)。ChatGPT prompt 从它生成，Codex 直接读取它；不要手工修改生成文件。
+
+以下命令供维护者验证工具包，普通用户通过上述 skill 入口使用。Python 工具只依赖标准库，维护检查要求 Python 3.9+。单独调试头像预览时可运行：
+
+```bash
+python3 skills/editorial-avatar/scripts/preview_avatar.py avatar.png --output preview.html
+```
 
 ```bash
 python3 scripts/build_prompt.py

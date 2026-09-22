@@ -52,22 +52,25 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <li>看过方案后发送第二条“按方案生成”代码块，取得图像。在认可的结果上继续要求修改，例如：“保留这版的构图和服装，只去掉眼镜。”</li>
 </ol>
 <p>ChatGPT 入口分成方案、生成两条消息，避免图像请求跳过用途澄清。未说明用途时，预期先问用途；明确后由助手设计。Codex 入口在用途明确后连续执行设计与生成。ChatGPT 无法凭本地文件路径读取照片，需要实际附图。图像生成、上传与编辑能力由你的账户及当前界面提供；本项目不提供生成额度。<a href="https://help.openai.com/en/articles/11084440">官方图像使用说明</a>。</p>
-<h2>Codex：安装完整 skill 文件夹</h2>
-<p>下载本仓库后，在仓库根目录执行以下命令。命令使用 Python 3，目标已存在时拒绝覆盖：</p>
-<pre><code class="language-bash">python3 -c &#39;from pathlib import Path; import shutil; d=Path.home()/&quot;.agents/skills/editorial-avatar&quot;; d.parent.mkdir(parents=True, exist_ok=True); shutil.copytree(&quot;skills/editorial-avatar&quot;, d)&#39;
-</code></pre>
-<p>安装位置依照 <a href="https://learn.chatgpt.com/docs/build-skills">Codex 本地 skills 文档</a>。如果你的环境已在其他目录安装同名 skill，应先决定更新哪份，避免同时安装两个版本。安装后在可选 skills 中确认 <code>editorial-avatar</code>；未出现时重新启动 Codex。</p>
-<p>附上照片并发送：</p>
+<h2>Codex：直接激活 skill</h2>
+<p>已安装后，在 Codex 输入框中选择 <code>editorial-avatar</code>，附上照片并说明用途；也可以直接发送：</p>
 <pre><code class="language-text">$editorial-avatar 这张图用于 GitHub 和 Hugging Face 的头像，保留眼镜，其余由你设计。
 </code></pre>
-<p>此 skill 不会为 Codex 增加图像生成能力：需要当前环境已提供 <code>image_gen</code>。缺少该工具时只能得到创作简报，不能称为已完成图像生成。预览脚本只需 Python 3 标准库，无需 Node 或 API key；维护检查脚本要求 Python 3.9+。</p>
-<h2>检查小尺寸与圆形裁切</h2>
-<pre><code class="language-bash">python3 skills/editorial-avatar/scripts/preview_avatar.py avatar.png --output preview.html
+<p>激活后由 Codex 读取 skill，完成用途澄清、肖像设计、图像生成与头像预览。日常使用只需照片和需求，无需手动运行 Python 或复制文件。</p>
+<p><strong>首次使用、尚未安装时</strong>，先在 Codex 中调用安装 skill：</p>
+<pre><code class="language-text">$skill-installer 请安装 https://github.com/xiaofengShi/editorial-avatar/tree/main/skills/editorial-avatar 中的 skill。
 </code></pre>
+<p>安装完成后，在下一轮对话选择或输入 <code>$editorial-avatar</code> 使用。已经安装的用户直接激活即可。安装和调用是两个步骤，仓库链接本身不会自动注册 skill。</p>
+<p>此 skill 需要当前 Codex 环境已提供图像生成能力。缺少该能力时，助手会说明限制并提供创作简报。调用方式见 <a href="https://learn.chatgpt.com/docs/build-skills">Codex skills 文档</a>。</p>
+<h2>检查小尺寸与圆形裁切</h2>
+<p>Codex skill 会调用附带的预览工具。你也可以在对话中要求：“检查这版头像的小尺寸和圆形裁切，并给我预览。”</p>
 <p>用浏览器打开生成的 HTML，以 100% 缩放查看。包含 40、64、128、256 CSS 像素的圆形裁切、深浅底色与完整原图；图片内嵌，可离线分享。它不修改原图、不上传文件，也不会自动判断好不好看。生成的预览包含原始图片数据，分享预览等于分享图片。已有输出默认拒绝覆盖；需要替换时添加 <code>--force</code>。</p>
 <p>仓库内的示例预览使用 <code>--linked</code> 相对引用原图，避免在 Git 中重复保存大块图片数据。该模式离线使用时需保留 HTML 与图片的相对位置；默认不加此选项时仍生成独立的内嵌版。</p>
 <h2>维护与贡献</h2>
 <p>核心设计逻辑只维护在 <a href="skills/editorial-avatar/references/workflow.md">workflow.md</a>。ChatGPT prompt 从它生成，Codex 直接读取它；不要手工修改生成文件。</p>
+<p>以下命令供维护者验证工具包，普通用户通过上述 skill 入口使用。Python 工具只依赖标准库，维护检查要求 Python 3.9+。单独调试头像预览时可运行：</p>
+<pre><code class="language-bash">python3 skills/editorial-avatar/scripts/preview_avatar.py avatar.png --output preview.html
+</code></pre>
 <pre><code class="language-bash">python3 scripts/build_prompt.py
 python3 scripts/build_prompt.py --check
 python3 -m unittest discover -s tests -v
