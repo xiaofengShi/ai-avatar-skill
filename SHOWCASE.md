@@ -44,6 +44,6 @@ Editorial Avatar / 案例展厅
 
 ## 从这里开始
 
-[在 Codex 中激活 skill](https://github.com/xiaofengShi/ai-avatar-skill#codex) · [使用 ChatGPT prompt](https://github.com/xiaofengShi/ai-avatar-skill#chatgpt)
+[在 Codex 中激活 skill](https://github.com/xiaofengShi/ai-avatar-skill/blob/main/README.zh-CN.md#codex) · [使用 ChatGPT prompt](https://github.com/xiaofengShi/ai-avatar-skill/blob/main/README.zh-CN.md#chatgpt)
 
-把照片和用途交给助手。安装、功能、使用要求与贡献方式见 [GitHub README](https://github.com/xiaofengShi/ai-avatar-skill#readme)。
+把照片和用途交给助手。安装、功能、使用要求与贡献方式见 [中文使用文档](https://github.com/xiaofengShi/ai-avatar-skill/blob/main/README.zh-CN.md)。
