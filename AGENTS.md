@@ -1,7 +1,7 @@
 # Editorial Avatar
 
 - A purpose-driven portrait workflow with a ChatGPT prompt and Codex skill.
-- Shared instructions live in `skills/editorial-avatar/references/workflow.md`; regenerate `prompts/chatgpt.md` with `python3 scripts/build_prompt.py`.
+- Canonical instructions live in `skills/editorial-avatar/references/workflow.md`; keep `workflow.en.md` aligned as its English translation. `python3 scripts/build_prompt.py` regenerates both ChatGPT prompts. Codex reads the canonical Chinese workflow.
 - Python helpers use the standard library. Run `python3 -m unittest discover -s tests -v`, `python3 scripts/build_prompt.py --check`, and `python3 scripts/check_package.py`.
 - Docs: `npm ci && npm run build:docs`; README covers usage; SHOWCASE.md is the showcase.html content source; VALIDATION.md is the validation source. showcase.html and validation.html are generated; the layout template lives in scripts/showcase.html. The landing pages index.html (EN) and zh.html (中文) are hand-authored and share assets/landing.css. Run `npm run check:docs` before committing docs changes.
 - Preserve actual example prompts, ordered references, hashes and observed outcomes. Do not claim stable identity fidelity or superiority without a corresponding comparison.

@@ -19,12 +19,14 @@ Give one photo and its purpose — let AI act as designer and photographer for y
 
 ## ChatGPT: copy and start
 
-1. Open the [ChatGPT prompt](prompts/chatgpt.md) and copy the plan-stage code block.
+1. Open the [English ChatGPT prompt](prompts/chatgpt.en.md) and copy the planning-stage code block. The [Chinese prompt](prompts/chatgpt.md) remains available.
 2. Paste it into a ChatGPT conversation with image generation, attach a photo and its purpose — for example: "For GitHub and Hugging Face, keep my glasses, design everything else yourself."
 3. To stay close to the example art style, also attach the [style reference](skills/editorial-avatar/references/style-anchor.png) and note clearly that it only defines the art style. Attaching just the person's photo works too, but describing the style in words may produce larger variation.
-4. After reviewing the plan, send the second "generate per plan" block to get the image. Then iterate on a result you approve — for example: "Keep this composition and outfit, only remove the glasses."
+4. After reviewing the plan, send the generation-stage block to get the image. Then iterate on a result you approve — for example: "Keep this composition and outfit, only remove the glasses."
 
 The ChatGPT entry splits plan and generate into two messages so image requests do not skip purpose clarification. Without a stated purpose, the assistant is expected to ask first, then design. The Codex entry runs design and generation continuously once the purpose is clear. ChatGPT cannot read photos from local file paths — attach them in the conversation. Image generation, upload, and editing are provided by your account and current interface; this project does not provide generation quota. See the [official image usage guide](https://help.openai.com/en/articles/11084440).
+
+The English wording is a translation and has not yet been tested in ChatGPT. The [validation log](VALIDATION.md) separates earlier Chinese-prompt observations from this new entry.
 
 <a id="codex"></a>
 
@@ -62,7 +64,7 @@ Example previews in this repo use `--linked` to reference originals by relative 
 
 ## Maintenance & contributing
 
-Core design logic lives only in [workflow.md](skills/editorial-avatar/references/workflow.md). The ChatGPT prompt is generated from it, and Codex reads it directly — do not hand-edit generated files.
+The canonical design rules live in the Chinese [workflow.md](skills/editorial-avatar/references/workflow.md), which Codex reads directly. [workflow.en.md](skills/editorial-avatar/references/workflow.en.md) is the maintained English translation. The build script generates both ChatGPT prompts from those sources; do not hand-edit generated files. Review both languages when changing the rules.
 
 The commands below let maintainers verify the toolkit; regular users go through the skill entry points above. The Python tools depend only on the standard library; maintenance checks require Python 3.9+. To debug the avatar preview on its own:
 

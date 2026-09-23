@@ -5,7 +5,7 @@ description: 根据人物照片与实际用途设计并生成肖像或头像。�
 
 # Editorial Avatar
 
-先阅读并执行 [共同设计流程](references/workflow.md)。该文件同时是 ChatGPT prompt 的维护源。
+先阅读并执行 [共同设计流程](references/workflow.md)。它是中文 ChatGPT prompt 的维护源；[英文译本](references/workflow.en.md)用于生成英文 ChatGPT prompt。
 
 ## Codex 执行入口
 

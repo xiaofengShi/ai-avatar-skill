@@ -62,7 +62,7 @@ README 中的在线预览链接通过 GitHub Pages 展示；GitHub 仓库中的 
 
 ## 维护与贡献
 
-核心设计逻辑只维护在 [workflow.md](skills/editorial-avatar/references/workflow.md)。ChatGPT prompt 从它生成，Codex 直接读取它；不要手工修改生成文件。
+中文 [workflow.md](skills/editorial-avatar/references/workflow.md) 是设计规则的权威来源，Codex 直接读取它；[workflow.en.md](skills/editorial-avatar/references/workflow.en.md) 是维护中的英文译本。构建脚本分别生成[中文 ChatGPT prompt](prompts/chatgpt.md) 和[英文版](prompts/chatgpt.en.md)，不要手工修改生成文件。规则变化时需同时核对两种语言。
 
 以下命令供维护者验证工具包，普通用户通过上述 skill 入口使用。Python 工具只依赖标准库，维护检查要求 Python 3.9+。单独调试头像预览时可运行：
 
