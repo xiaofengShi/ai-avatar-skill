@@ -2,7 +2,7 @@
 
 Give one photo and its purpose — let AI act as designer and photographer for your portrait.
 
-[<img src="assets/icons/code.svg" width="16" height="16" alt=""> Codex skill](#codex) · [<img src="assets/icons/chat.svg" width="16" height="16" alt=""> ChatGPT prompt](#chatgpt) · [Validation log](VALIDATION.md) · [Issues](https://github.com/xiaofengShi/ai-avatar-skill/issues) · [中文文档](README.zh-CN.md)
+[<img src="assets/icons/code.svg" width="16" height="16" alt=""> Codex skill](#codex) · [<img src="assets/icons/chat.svg" width="16" height="16" alt=""> ChatGPT prompt](#chatgpt) · [Cases](https://xiaofengshi.github.io/ai-avatar-skill/showcase.en.html) · [Validation log](VALIDATION.en.md) · [Issues](https://github.com/xiaofengShi/ai-avatar-skill/issues) · [中文文档](README.zh-CN.md)
 
 ## What it does
 
@@ -26,7 +26,7 @@ Give one photo and its purpose — let AI act as designer and photographer for y
 
 The ChatGPT entry splits plan and generate into two messages so image requests do not skip purpose clarification. Without a stated purpose, the assistant is expected to ask first, then design. The Codex entry runs design and generation continuously once the purpose is clear. ChatGPT cannot read photos from local file paths — attach them in the conversation. Image generation, upload, and editing are provided by your account and current interface; this project does not provide generation quota. See the [official image usage guide](https://help.openai.com/en/articles/11084440).
 
-The English wording is a translation and has not yet been tested in ChatGPT. The [validation log](VALIDATION.md) separates earlier Chinese-prompt observations from this new entry.
+The English wording is a translation and has not yet been tested in ChatGPT. The [validation log](VALIDATION.en.md) separates earlier Chinese-prompt observations from this entry.
 
 <a id="codex"></a>
 
@@ -54,7 +54,7 @@ This skill requires image generation capability in the current Codex environment
 
 The Codex skill calls the bundled preview tool. You can also ask in conversation: "Check this avatar at small sizes and circular crops, and show me a preview."
 
-[See crop examples on the showcase page](https://xiaofengshi.github.io/ai-avatar-skill/showcase.html#preview) · [Open a real preview](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)
+[See crop examples on the showcase page](https://xiaofengshi.github.io/ai-avatar-skill/showcase.en.html#preview) · [Open a real preview](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)
 
 Open the generated HTML in a browser at 100% zoom. It includes circular crops at 40, 64, 128, and 256 CSS px, light and dark backgrounds, and the full original image; images are embedded for offline sharing. It does not modify the original, upload files, or judge whether the result looks good. The preview embeds the original image data — sharing the preview shares the image. Existing output is refused by default; add `--force` to replace it.
 
@@ -79,7 +79,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 ```
 
-This README covers features and usage; [SHOWCASE.md](SHOWCASE.md) maintains the case gallery and generates `showcase.html`; the landing pages `index.html` (English) and `zh.html` (中文) are hand-authored; [VALIDATION.md](VALIDATION.md) generates `validation.html`. The web template and styles live in `scripts/showcase.html`. HTML is generated with Node 20+ and the dev dependency `marked`; regular use does not require installing them. GitHub Pages publishes the generated HTML from the `main` branch root, with `.nojekyll` preserving original static file paths. After updating docs, regenerate the HTML and commit it together:
+This README covers features and usage; [SHOWCASE.en.md](SHOWCASE.en.md) and [SHOWCASE.md](SHOWCASE.md) source the English and Chinese case pages, while [VALIDATION.en.md](VALIDATION.en.md) and [VALIDATION.md](VALIDATION.md) source their validation pages. The landing pages `index.html` (English) and `zh.html` (中文) are hand-authored. Gallery templates live in `scripts/showcase.en.html` and `scripts/showcase.html`. HTML is generated with Node 20+ and the dev dependency `marked`; regular use does not require installing them. GitHub Pages publishes the generated HTML from the `main` branch root, with `.nojekyll` preserving original static file paths. After updating docs, regenerate the HTML and commit it together:
 
 ```bash
 npm ci
@@ -89,7 +89,7 @@ npm run check:docs
 
 When contributing examples, submit the purpose, the division of labor among inputs, the actual prompts, unselected trial results, and known issues; only submit material you have the right to publish. Distinguish tool-generated output, assistant review, and user approval — do not delete failed images and claim stability. Claims of quality improvement should include short-prompt comparisons under the same input, same model, and same retry budget.
 
-So far the project has a small number of fictional-character tests, one real travel-photo case, and basic interaction tests. There is no evidence yet of better image quality than short prompts, or of stable output — see the [validation log](VALIDATION.md) for the full boundaries.
+So far the project has a small number of fictional-character tests, one real travel-photo case, and basic interaction tests. There is no evidence yet of better image quality than short prompts, or of stable output — see the [validation log](VALIDATION.en.md) for the full boundaries.
 
 ## License & assets
 

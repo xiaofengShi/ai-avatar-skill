@@ -77,7 +77,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 ```
 
-英文 [README.md](README.md) 与本文维护功能与使用说明；[SHOWCASE.md](SHOWCASE.md) 维护案例展示，生成案例页 `showcase.html`；落地页 `index.html`（英文）与 `zh.html`（中文）为手工维护；[VALIDATION.md](VALIDATION.md) 生成 `validation.html`。网页模板与样式位于 `scripts/showcase.html`。HTML 通过 Node 20+ 与开发依赖 `marked` 生成，普通使用不需要安装这些依赖。GitHub Pages 从 `main` 分支根目录发布已生成的 HTML，`.nojekyll` 保留静态文件的原始路径；更新文档后应重新生成 HTML 并一并提交：
+英文 [README.md](README.md) 与本文维护功能与使用说明；[SHOWCASE.md](SHOWCASE.md) 和 [SHOWCASE.en.md](SHOWCASE.en.md) 分别维护中英文案例页；落地页 `index.html`（英文）与 `zh.html`（中文）为手工维护；[VALIDATION.md](VALIDATION.md) 和 [VALIDATION.en.md](VALIDATION.en.md) 分别维护中英文验证记录。中英文案例模板位于 `scripts/showcase.html` 与 `scripts/showcase.en.html`。HTML 通过 Node 20+ 与开发依赖 `marked` 生成，普通使用不需要安装这些依赖。GitHub Pages 从 `main` 分支根目录发布已生成的 HTML，`.nojekyll` 保留静态文件的原始路径；更新文档后应重新生成 HTML 并一并提交：
 
 ```bash
 npm ci

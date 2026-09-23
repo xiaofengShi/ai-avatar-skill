@@ -1,6 +1,6 @@
 ---
 name: editorial-avatar
-description: 根据人物照片与实际用途设计并生成肖像或头像。用途不清楚时先问，再完成整体设计、图像生成、自然度与裁切检查；支持画风参考和后续局部修改。
+description: Design and generate a purpose-driven portrait or avatar from a person's photo. Ask where it will be used if unclear, then plan styling and composition, generate, and inspect naturalness and avatar crops; supports style references and local edits. 根据照片及用途设计头像；用途不明时先问，支持画风参考、局部修改与裁切检查。
 ---
 
 # Editorial Avatar
