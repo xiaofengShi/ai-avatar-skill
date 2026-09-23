@@ -25,9 +25,11 @@ h2{font-family:Georgia,'Songti SC',serif;font-size:clamp(26px,3vw,36px);font-wei
 .cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:28px 0 12px}
 .case{min-width:0}.case .pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}.case .pair a{display:block;background:var(--panel);border-radius:4px;overflow:hidden}.case img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.case.travel img{object-fit:cover}.case h3{font-size:16.5px;margin:14px 0 4px}.case .brief{font-size:13.5px;color:var(--muted);margin:0}
 .more-link{display:inline-block;margin:8px 0 40px;font-weight:650}
-.preview-shot{display:block;max-width:760px;margin:24px 0 40px}.preview-shot img{display:block;width:100%;border:1px solid var(--line);border-radius:8px}
+.crop-demo{max-width:760px;margin:24px 0 0;padding:12px;border:1px solid var(--line);border-radius:8px;background:#f1f5f4}
+.crop-panel{padding:16px;border-radius:6px}.crop-panel+.crop-panel{margin-top:12px}.crop-panel.light{background:#fff;color:#202823}.crop-panel.dark{background:#151b20;color:#f0f3f4}.crop-panel strong{font-size:14px}
+.crop-sizes{display:flex;align-items:end;flex-wrap:wrap;gap:18px;margin-top:18px}.crop-sizes figure{margin:0;text-align:center}.crop-sizes img{display:block;max-width:100%;object-fit:cover;border-radius:50%}.crop-sizes figcaption{margin-top:6px;font-size:12px}.preview-link{margin:12px 0 40px;font-size:14px}
 .start{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:28px 0 40px}
-.start .col{border:1px solid var(--line);border-radius:8px;background:var(--white);padding:22px}.start h3{margin:0 0 6px;font-size:18px}.start .tag{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.start .col{min-width:0;border:1px solid var(--line);border-radius:8px;background:var(--white);padding:22px}.start h3{margin:0 0 6px;font-size:18px}.start .tag{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
 pre{overflow:auto;padding:16px;background:#edece5;border-radius:6px;font-size:13.5px;line-height:1.65;margin:14px 0 0}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .note{font-size:13.5px;color:var(--muted);margin-top:12px}
 .honest{background:var(--panel);border-radius:8px;padding:22px 26px;margin:28px 0 48px;font-size:14.5px}.honest p{margin:8px 0}

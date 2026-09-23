@@ -23,9 +23,24 @@ Editorial Avatar / 案例展厅
 
 ## 小尺寸，也值得认真看
 
-[![头像预览实际截图：浅色与深色背景下的 40、64、128、256 px 圆形裁切](examples/developer/preview-screenshot.png)](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)
+下方直接用虚构人物的高清成片渲染圆形裁切，不放大低分辨率截图。
 
-上图为虚构人物示例的实际预览截图。截图会随页面宽度缩放；检查真实 CSS 尺寸时，请[打开完整预览](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)并保持浏览器 100% 缩放。
+<div class="crop-demo" aria-label="浅色与深色背景下的圆形头像裁切">
+  <div class="crop-panel light"><strong>浅色界面</strong><div class="crop-sizes">
+    <figure><img src="examples/developer/avatar.png" width="40" height="40" alt="40 像素圆形裁切"><figcaption>40 px</figcaption></figure>
+    <figure><img src="examples/developer/avatar.png" width="64" height="64" alt="64 像素圆形裁切"><figcaption>64 px</figcaption></figure>
+    <figure><img src="examples/developer/avatar.png" width="128" height="128" alt="128 像素圆形裁切"><figcaption>128 px</figcaption></figure>
+    <figure><img src="examples/developer/avatar.png" width="256" height="256" alt="256 像素圆形裁切"><figcaption>256 px</figcaption></figure>
+  </div></div>
+  <div class="crop-panel dark"><strong>深色界面</strong><div class="crop-sizes">
+    <figure><img src="examples/developer/avatar.png" width="40" height="40" alt="40 像素圆形裁切"><figcaption>40 px</figcaption></figure>
+    <figure><img src="examples/developer/avatar.png" width="64" height="64" alt="64 像素圆形裁切"><figcaption>64 px</figcaption></figure>
+    <figure><img src="examples/developer/avatar.png" width="128" height="128" alt="128 像素圆形裁切"><figcaption>128 px</figcaption></figure>
+    <figure><img src="examples/developer/avatar.png" width="256" height="256" alt="256 像素圆形裁切"><figcaption>256 px</figcaption></figure>
+  </div></div>
+</div>
+
+检查真实 CSS 尺寸时，请[打开完整预览](https://xiaofengshi.github.io/ai-avatar-skill/examples/developer/preview.html)并保持浏览器 100% 缩放。
 
 ## 从这里开始
 
