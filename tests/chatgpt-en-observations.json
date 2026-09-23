@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-23",
+  "entrypoint": "Normal ChatGPT conversation in signed-in Chrome",
+  "record_type": "assistant observations from visible UI, not an independent evaluation",
+  "model": null,
+  "internal_image_prompt": null,
+  "prompt_file": "prompts/chatgpt.en.md",
+  "tested_prompt_file_sha256": "0ef33b3cd61ab86f02a084bc86733f062c2f1045e2aed0dd66f8699eaae1be93",
+  "current_prompt_file_sha256": "5b43702b172012d54f1cbeb71bbb9f512f6759fda4408cf29e86bfdcfe610a15",
+  "post_trial_change": "Only the generated prompt's introductory validation-status sentence changed; both stage blocks stayed the same.",
+  "planning_stage_sha256": "16ce34c91d5d53f5f7b7857dccc00380dd1e930a1b024936cec6063b6eebbcc1",
+  "first_message": {
+    "construction": "Complete Planning stage code block from prompt_file, followed by two newlines and input_suffix",
+    "input_suffix": "I want to turn a photo into a nice avatar.",
+    "sha256": "981c1b06daab9bf7de51976bb17aead3762b2fbc82518c4edd109bc75e4ebe94",
+    "response": "Where will this image primarily be used?",
+    "image_visible": false
+  },
+  "second_message": {
+    "input": "For my GitHub and Hugging Face profile avatars. Keep the glasses; design everything else yourself. The attached source.png is the person and identity reference. No style reference is attached.",
+    "attachments_in_order": [
+      {
+        "path": "examples/developer/source.png",
+        "role": "fictional person and identity reference",
+        "sha256": "8429e5704d0ec7aa9f1ee2ef4fd040d2a3b6f3c7789d3eb6843467e03a7197db"
+      }
+    ],
+    "style_reference_uploaded": false,
+    "response": "Text plan for a centered square head-and-shoulders portrait with glasses, graying hair, facial hair, dark top, cool-gray background, and semi-realistic hand-drawn style; no image or photography-parameter questionnaire."
+  },
+  "third_message": {
+    "input": "Generate according to the plan. Use the person's photo I attached as the identity reference. If I also provided a style reference, borrow only its visual language. Deliver the image directly and review it for its actual use; claim a check passed only if you performed it.",
+    "response": "One generated image was visible; no accompanying written review."
+  },
+  "output": {
+    "downloaded_filename": "Codex 图像 2026年9月23日 18_32_37.png",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 2657706,
+    "sha256": "62eb897cd70c36d1bef8a0fbd669ea14141dc18ccb4df685b55b701e64de10b2",
+    "included_in_repository": false,
+    "assistant_visual_observation": "Glasses, graying hair, and facial hair remained visible. Clothing became a dark knit top on a light blue-gray background. The face still looked largely photographic with some sketch-like texture, short of the proposed semi-realistic hand-drawn style. No obvious head/neck/shoulder mismatch was visible in the full image."
+  },
+  "checks_not_performed": [
+    "Circular or small-size avatar crop inspection",
+    "Independent human review or identity-fidelity measurement",
+    "Repeated generation, later edit, or two-image style-reference trial"
+  ]
+}

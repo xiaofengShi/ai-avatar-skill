@@ -4,7 +4,7 @@
 
 ## 可以确认什么
 
-- 中文 ChatGPT prompt 从中文 workflow 自动生成；Codex skill 直接读取该 workflow。英文 ChatGPT prompt 从英文译本生成，译文尚未在 ChatGPT 实测。
+- 中文 ChatGPT prompt 从中文 workflow 自动生成；Codex skill 直接读取该 workflow。英文 ChatGPT prompt 从英文译本生成，并在登录的 Chrome ChatGPT 中完成了一次两阶段实测。
 - Codex 内置图像工具完成了 5 组头像示例：2 组原始照片到头像、1 组相同人物的用途适配、2 组已有头像编辑。仅覆盖 2 个虚构人物。实际 brief 由当前助手按流程编写，不是独立代理盲测或 skill 自动触发测试。
 - 另完成 1 组真实旅行照片到插画的委托，共 6 组图像示例。旅行成片获该用户认可并授权公开，其他案例仍是助手检查；这不是六人测试或独立真人盲评。
 - 预览工具已验证原图字节保留、内嵌显示、文件名 HTML 转义、拒绝覆盖输出、拒绝覆盖输入和拒绝 SVG 作为图像输入。
@@ -68,9 +68,15 @@
 
 状态：两阶段基本交互已验证；风格一致性未证明。最终网页图像在可见尺寸下仍偏写实，绘画感主要体现在背景与衣服，不能称为精确匹配 Codex 参考风格。ChatGPT 没有返回可核验的实际图像工具 prompt、模型版本、seed 或下载文件；网页输出未收入仓库。本文图像示例均来自 Codex 生成记录。ChatGPT 测试使用同一对话中生成的虚构源图，没有测试真实用户上传照片的路径；新对话澄清测试同时缺少用途和照片。
 
-2026-09-23 新增的[英文 ChatGPT prompt](prompts/chatgpt.en.md)由 [workflow.en.md](skills/editorial-avatar/references/workflow.en.md) 生成；这是中文规则的人工译本。上述网页观察仅涉及较早的中文 prompt，不能作为英文译本通过行为测试的证据。英文版的用途澄清、两阶段生成和后续编辑仍待实测；[中文 prompt](prompts/chatgpt.md)与其历史观察记录保持不变。
+2026-09-23 新增的[英文 ChatGPT prompt](prompts/chatgpt.en.md)由 [workflow.en.md](skills/editorial-avatar/references/workflow.en.md) 生成；这是中文规则的人工译本。上述中文网页观察不能作为英文版的行为证据；[中文 prompt](prompts/chatgpt.md)与其历史观察记录保持不变。
 
 2026-09-23 在未登录的 ChatGPT 网页发送了英文方案规则的一段摘录与含糊的头像请求；界面显示消息已发送，但读取回复时浏览器操作连续超时。此次既不是完整英文 prompt 测试，也未观察到可核验回复，故不改变上述“待实测”状态。
+
+2026-09-23 又在**已登录的 Chrome 普通 ChatGPT 对话**中进行了完整英文两阶段测试。第一条消息是生成文件中完整的英文 Planning stage 代码块，加上“I want to turn a photo into a nice avatar.”；实际发送文本的 SHA-256 与按文件拼接计算的 `981c1b06daab9bf7de51976bb17aead3762b2fbc82518c4edd109bc75e4ebe94` 一致。ChatGPT 只回复“Where will this image primarily be used?”，该轮未显示图像。
+
+在同一对话中仅上传仓库公开的虚构人物照片 [source.png](examples/developer/source.png)（SHA-256 `8429e5704d0ec7aa9f1ee2ef4fd040d2a3b6f3c7789d3eb6843467e03a7197db`），并发送：“For my GitHub and Hugging Face profile avatars. Keep the glasses; design everything else yourself. The attached source.png is the person and identity reference. No style reference is attached.” ChatGPT 给出方案：方形头肩构图、自然正面视线、深色上衣、浅灰冷调背景；明确保留眼镜、灰白头发和胡茬，声明采用半写实手绘方向。该轮只显示文字方案，没有生成图像或要求逐项选择摄影参数。
+
+随后发送英文 Generation stage 原文。页面显示一张生成图像，下载按钮取得 1254 × 1254 PNG（SHA-256 `62eb897cd70c36d1bef8a0fbd669ea14141dc18ccb4df685b55b701e64de10b2`）；输出图未收入仓库。助手查看页面 60% 视图与下载原图：眼镜、灰白短发和胡茬可见，衣服换成深色针织上衣，背景为浅灰蓝；五官和肤质仍明显偏写实照片，仅有局部素描纹理，与方案中的半写实手绘方向不完全相符。未见明显头颈肩错位。ChatGPT 此轮只显示图像，未给出可核验的裁切或小尺寸检查说明；本次也未实际检查圆形裁切。页面没有公开内部图像提示词、模型版本或 seed。单张虚构人物图无法证明身份保真或风格稳定；后续编辑和风格参考双图路径仍待测试。完整输入及观察另存于 [英文试验记录](tests/chatgpt-en-observations.json)。
 
 ### 圆形裁切与小尺寸
 
@@ -82,7 +88,7 @@
 
 ### 已检查与待验证范围
 
-- ChatGPT 真实照片上传路径、双图风格参考与后续编辑；当前只完成虚构源图的基本交互实测。
+- ChatGPT 真实人物照片上传路径、双图风格参考与后续编辑；英文版目前只完成一次公开虚构源图的基本两阶段交互实测。
 - 项目主页已在 1280 px 桌面视口与 390 px 手机视口检查：六组案例在桌面为双列网格、手机为单列，页面无横向溢出，原图与结果尺寸相同。12 张案例图片在本地浏览器正常加载；试验记录可用键盘展开。核心内容不依赖 JavaScript。此前头像预览另在 390 CSS 像素 iframe 中检查过；这些不是实体手机测试。打印效果尚未查看。
 - 2026-09-23 英文页面发布后，GitHub Pages 对对应提交的构建状态为成功；线上中英文首页及两张新英文页与提交文件逐字节一致。使用 Codex 的 skill-installer 在临时目录从公开仓库安装成功，安装后预览脚本用仓库内虚构人物成片生成了内嵌图片的 HTML。首次安装因本机 Python 缺少可用的默认证书链失败；将 `SSL_CERT_FILE` 指向本机已有的 `certifi` 证书包后，同一安装脚本通过。这项检查只覆盖安装包与预览生成，不代表 skill 已在新对话自动调用或生成审美表现通过。新增英文页的本地链接与锚点已检查；Chrome 桌面视图中，英文案例页顶部和首两组图片在双列布局下正常显示，本次未完成手机宽度视觉复看。
 - 内嵌图像字节与相对路径已通过脚本测试，浏览器视觉检查使用本地 HTTP 页面。尝试打开 file:// 页面时原生浏览器自动化未完成导航，因此直接双击文件的离线显示尚未实测。
