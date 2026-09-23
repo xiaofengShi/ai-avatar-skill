@@ -36,8 +36,11 @@ def check():
                 errors.append(f"Unrecorded run input/output: {name}")
     observations = json.loads((ROOT / "tests/chatgpt-observations.json").read_text(encoding="utf-8"))
     prompt = ROOT / observations["prompt_file"]
-    if hashlib.sha256(prompt.read_bytes()).hexdigest() != observations["prompt_sha256"]:
+    current_prompt_hash = hashlib.sha256(prompt.read_bytes()).hexdigest()
+    if current_prompt_hash != observations.get("current_prompt_sha256", observations["prompt_sha256"]):
         errors.append("ChatGPT prompt has changed since the recorded observations; update validation status")
+    if current_prompt_hash != observations["prompt_sha256"] and observations.get("current_prompt_tested") is not False:
+        errors.append("ChatGPT observations must be marked historical when the prompt changes")
     for error in errors:
         print(error)
     if errors:

@@ -9,7 +9,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 @media(max-width:480px){td,th{padding:4px;font-size:14px}}
 @media print{body{background:white}main{padding:0}h2,h3{break-after:avoid}.table-scroll{overflow:visible}table{min-width:0;font-size:12px}tr{break-inside:avoid}img{max-height:85mm;width:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}}
 </style></head><body><main><h1>验证记录</h1>
-<p>初次验证：2026-09-21；新增案例：2026-09-22。范围：双入口内容、工具功能、少量虚构人物实测与一组真实旅行照片案例。项目已发布到 <a href="https://github.com/xiaofengShi/ai-avatar-skill">GitHub</a>。</p>
+<p>初次验证：2026-09-21；新增案例：2026-09-22；姿态规则修订：2026-09-23。范围：双入口内容、工具功能、少量虚构人物实测与一组真实旅行照片案例。项目已发布到 <a href="https://github.com/xiaofengShi/ai-avatar-skill">GitHub</a>。</p>
 <h2>可以确认什么</h2>
 <ul>
 <li>ChatGPT prompt 从共享 workflow 自动生成；Codex skill 直接读取相同 workflow。</li>
@@ -24,6 +24,9 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <p>第一次图像调用因 JPEG 的 invalid_image_file 错误未生成结果。将原照转为 PNG 后，用同一份简报调用成功，未作图像质量重试或候选筛选。实际简报见 <a href="examples/travel/generation.prompt.txt">generation.prompt.txt</a>，人物源图与成片见<a href="https://xiaofengshi.github.io/ai-avatar-skill/showcase.html#examples">项目主页案例区</a>。公开源图已移除 EXIF、文本等元数据，并核对 PNG 的 IDAT 图像数据未变化。</p>
 <p>助手原图检查：侧脸方向、眼镜、短发与背包保留；人物占比提高，路牌、绿荫与柔和日光形成旅行环境肖像。街景、建筑、路牌位置和细节经重构，图中的指路箭头不应用于导航。该图按竖版环境肖像查看，没有作头像圆裁切检查。</p>
 <p>用户评价“不错”，并要求将此案例加入 GitHub README，状态为“已生成、助手检查、该用户认可并授权公开”。这是单个真实案例，不能推出身份精确还原、跨人物稳定性或模型优越性。</p>
+<h3>2026-09-23：侧脸原照用于大会讲者介绍</h3>
+<p>同一真实旅行照片被用于另一用途的本地试验。首版简报过度要求保留原照侧脸，结果虽自然，却不利于讲者介绍中辨认双眼与面部。用户指出这个用途应适度转向镜头。随后以上一版为编辑基底、原照为身份参考，生成了更接近正面的半身肖像；助手在 160 px 与 240 px 讲者卡片中实际查看，双眼可见，头颈肩关系未见明显异常。该修正版只在本地保存，未获用户认可，也不计入公开示例。</p>
+<p>共享 workflow 和本机已安装 skill 已改为按用途选择朝向，不再把原照角度当作硬约束。由于原照只提供侧脸，另一侧五官仍由模型推断，不能据此断言身份保真。ChatGPT 两阶段 prompt 已按共享 workflow 重新生成，但此修订版尚未在 ChatGPT 网页复测；<a href="tests/chatgpt-observations.json">观察记录</a>保留先前测试所用 prompt 的哈希，同时明确标记当前版本未测试。</p>
 <h3>开源社区头像：Codex</h3>
 <p>输入：虚构男性照片与公共画风参考；用途：GitHub / Hugging Face；保留眼镜。输出为一次生成，没有通过多次抽样挑选。</p>
 <p>助手原图审片观察：圆框眼镜、灰白发色、胡茬与宽脸辨识线索保留；墨蓝便装与浅蓝灰背景协调，表情克制。皮肤局部纹理仍偏细碎，绘画简化程度没有参考图那么强。状态为“已生成、助手原图审片”，未获独立真人评价或用户认可。</p>
@@ -109,6 +112,10 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <tr>
 <td>“再瘦 20 斤。”</td>
 <td>作为视觉模拟处理，不宣称精确预测减重结果，不擅自改其他设计。</td>
+</tr>
+<tr>
+<td>“这张侧脸旅行照用于大会讲者介绍。”</td>
+<td>按讲者用途设计更可辨的面部朝向，保持自然头颈肩关系；说明转向后不可见五官需要推断。</td>
 </tr>
 </tbody></table></div>
 <p>记录原始输入、实际用户消息、能获得的生成指令、入口与日期、每次输出及重试原因。对照试验需要固定图像、用途、模型条件与重试预算；审美评价应盲看同尺寸成片并报告评审人数，不能用助手自评代替独立真人盲审。</p>

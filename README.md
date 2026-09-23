@@ -8,7 +8,7 @@ Give one photo and its purpose — let AI act as designer and photographer for y
 
 | Capability | How it works |
 | --- | --- |
-| Purpose-driven design | Provide a photo and where it will be used. If the purpose is unclear, the assistant asks first, then designs composition, styling, lighting, and palette. |
+| Purpose-driven design | Provide a photo and where it will be used. If the purpose is unclear, the assistant asks first, then designs pose, composition, styling, lighting, and palette. The source photo's head angle is a reference, not a required output angle. |
 | Style & local edits | Semi-realistic illustration by default; request other art styles, keep glasses, or adjust expressions — and keep iterating on a version you approve. |
 | Avatar crop check | Preview circular crops at 40, 64, 128, and 256 px, on both light and dark backgrounds. |
 | Two entry points | Codex runs the skill; ChatGPT uses a two-stage prompt (plan, then generate). |
