@@ -112,6 +112,26 @@
     {
       "path": "examples/speaker-smile/avatar-v2.png",
       "sha256": "eb3eea5859c4b98e081e74adfc0a76d0d161159c8e0c62f4adb213360f7e1430"
+    },
+    {
+      "path": "examples/studio-id-photo/source.png",
+      "sha256": "54be9161d3bce88093cd94430bc61d13ef0d1b1f92d6da200b10476bb1bbf0b7"
+    },
+    {
+      "path": "examples/studio-id-photo/source.prompt.txt",
+      "sha256": "fad44d0040bf5198cdb0f6c6ba5382cee2b1f393568146fd360adc0db4cb99ca"
+    },
+    {
+      "path": "examples/studio-id-photo/portrait.png",
+      "sha256": "4ad98bdf997e03e938b291e96833b7070a98ac3de64994ce67570dd4f4020d5e"
+    },
+    {
+      "path": "examples/studio-id-photo/generation.prompt.txt",
+      "sha256": "140eb91afac1c287a78b27c9dfbf67cdcdda81a6f13748f290fb10885841aa8b"
+    },
+    {
+      "path": "examples/studio-id-photo/request.txt",
+      "sha256": "db895979cdef072ca7de0bb7bb7a5feab3ff0a791fe96a169c130ce0b81fcce7"
     }
   ],
   "runs": [
@@ -316,6 +336,36 @@
       "attempt": 2,
       "status": "generated_pending_user_review",
       "evaluation": "One correction after user rejected the first pose; used original base and original synthetic identity photograph"
+    },
+    {
+      "id": "studio-id-photo-source",
+      "date": "2026-09-24",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/studio-id-photo/source.prompt.txt",
+      "output": "examples/studio-id-photo/source.png",
+      "inputs": [],
+      "synthetic": true
+    },
+    {
+      "id": "studio-id-photo-portrait",
+      "date": "2026-09-24",
+      "entrypoint": "Codex built-in image_gen",
+      "model": null,
+      "seed": null,
+      "prompt": "examples/studio-id-photo/generation.prompt.txt",
+      "request": "examples/studio-id-photo/request.txt",
+      "output": "examples/studio-id-photo/portrait.png",
+      "inputs": [
+        {
+          "role": "edit_base_and_identity",
+          "path": "examples/studio-id-photo/source.png"
+        }
+      ],
+      "synthetic": true,
+      "attempt": 1,
+      "evaluation": "Assistant-directed image edit for a resume and employee-directory case; not a verified official ID photo or independent skill invocation test"
     }
   ]
 }

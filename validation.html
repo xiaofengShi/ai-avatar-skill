@@ -9,12 +9,12 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 @media(max-width:480px){td,th{padding:4px;font-size:14px}}
 @media print{body{background:white}main{padding:0}h2,h3{break-after:avoid}.table-scroll{overflow:visible}table{min-width:0;font-size:12px}tr{break-inside:avoid}img{max-height:85mm;width:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}}
 </style></head><body><main><h1>验证记录</h1>
-<p>初次验证：2026-09-21；新增案例：2026-09-22；姿态规则修订：2026-09-23。范围：双入口内容、工具功能、少量虚构人物实测与一组真实旅行照片案例。项目已发布到 <a href="https://github.com/xiaofengShi/ai-avatar-skill">GitHub</a>。</p>
+<p>初次验证：2026-09-21；新增案例：2026-09-22、2026-09-24；姿态规则修订：2026-09-23。范围：双入口内容、工具功能、少量虚构人物实测与一组真实旅行照片案例。项目已发布到 <a href="https://github.com/xiaofengShi/ai-avatar-skill">GitHub</a>。</p>
 <h2>可以确认什么</h2>
 <ul>
 <li>中文 ChatGPT prompt 从中文 workflow 自动生成；Codex skill 直接读取该 workflow。英文 ChatGPT prompt 从英文译本生成，并在登录的 Chrome ChatGPT 中完成了一次两阶段实测。</li>
-<li>Codex 内置图像工具完成了 5 组头像示例：2 组原始照片到头像、1 组相同人物的用途适配、2 组已有头像编辑。仅覆盖 2 个虚构人物。实际 brief 由当前助手按流程编写，不是独立代理盲测或 skill 自动触发测试。</li>
-<li>另完成 1 组真实旅行照片到插画的委托，共 6 组图像示例。旅行成片获该用户认可并授权公开，其他案例仍是助手检查；这不是六人测试或独立真人盲评。</li>
+<li>Codex 内置图像工具完成了 6 组虚构人物肖像示例：3 组原始照片到肖像、1 组相同人物的用途适配、2 组已有头像编辑。仅覆盖 3 个虚构人物。实际 brief 由当前助手按流程编写，不是独立代理盲测或 skill 自动触发测试。</li>
+<li>另完成 1 组真实旅行照片到插画的委托，共 7 组图像示例。旅行成片获该用户认可并授权公开，其他案例仍是助手检查；这不是七人测试或独立真人盲评。</li>
 <li>预览工具已验证原图字节保留、内嵌显示、文件名 HTML 转义、拒绝覆盖输出、拒绝覆盖输入和拒绝 SVG 作为图像输入。</li>
 <li>Skill 结构校验通过。结构通过不等于审美或行为测试通过。</li>
 </ul>
@@ -24,6 +24,9 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <p>第一次图像调用因 JPEG 的 invalid_image_file 错误未生成结果。将原照转为 PNG 后，用同一份简报调用成功，未作图像质量重试或候选筛选。实际简报见 <a href="examples/travel/generation.prompt.txt">generation.prompt.txt</a>，人物源图与成片见<a href="https://xiaofengshi.github.io/ai-avatar-skill/showcase.html#examples">项目主页案例区</a>。公开源图已移除 EXIF、文本等元数据，并核对 PNG 的 IDAT 图像数据未变化。</p>
 <p>助手原图检查：侧脸方向、眼镜、短发与背包保留；人物占比提高，路牌、绿荫与柔和日光形成旅行环境肖像。街景、建筑、路牌位置和细节经重构，图中的指路箭头不应用于导航。该图按竖版环境肖像查看，没有作头像圆裁切检查。</p>
 <p>用户评价“不错”，并要求将此案例加入 GitHub README，状态为“已生成、助手检查、该用户认可并授权公开”。这是单个真实案例，不能推出身份精确还原、跨人物稳定性或模型优越性。</p>
+<h3>2026-09-24：虚构中国女性的精致影棚证件照风格案例</h3>
+<p>用户要求增加“中国女性、海马体证件照”案例。助手将展示用途限定为简历／员工资料，并先以纯文字生成一张 1305 × 1205 的虚构人物普通照片，再以该图为唯一人物参考，按实际 <a href="examples/studio-id-photo/generation.prompt.txt">成片指令</a>调用 Codex 内置 image_gen 一次，得到 1086 × 1448 的竖幅照片；没有上传真人照片、海马体样片或标志，也未使用公共手绘画风图。源图及其<a href="examples/studio-id-photo/source.prompt.txt">生成指令</a>、用户<a href="examples/studio-id-photo/request.txt">原话</a>和两次图像调用的哈希均记录在 <a href="examples/manifest.json">manifest.json</a>。模型版本和 seed 未公开。</p>
+<p>助手原图观察：成片为正面头肩构图，浅蓝纯色背景、深蓝西装与白色内搭，妆容和修饰较克制；黑色中长发、脸型大轮廓与左颊痣可对照，眼部与脸部细节有生成变化。只完成一张源图和一张成片，尚无用户审美认可或独立身份相似度评估。海马体是用户指定的视觉方向，本案例与该品牌无关联；图像未经任何正式证件或考试报名的尺寸、背景、修饰规则核验，不能作为合规证件照示例。</p>
 <h3>2026-09-23：侧脸原照用于大会讲者介绍</h3>
 <p>同一真实旅行照片被用于另一用途的本地试验。首版简报过度要求保留原照侧脸，结果虽自然，却不利于讲者介绍中辨认双眼与面部。用户指出这个用途应适度转向镜头。随后以上一版为编辑基底、原照为身份参考，生成了更接近正面的半身肖像；助手在 160 px 与 240 px 讲者卡片中实际查看，双眼可见，头颈肩关系未见明显异常。该修正版只在本地保存，未获用户认可，也不计入公开示例。</p>
 <p>共享 workflow 和本机已安装 skill 已改为按用途选择朝向，不再把原照角度当作硬约束。由于原照只提供侧脸，另一侧五官仍由模型推断，不能据此断言身份保真。ChatGPT 两阶段 prompt 已按共享 workflow 重新生成，但此修订版尚未在 ChatGPT 网页复测；<a href="tests/chatgpt-observations.json">观察记录</a>保留先前测试所用 prompt 的哈希，同时明确标记当前版本未测试。</p>
@@ -84,7 +87,7 @@ blockquote{margin:16px 0;padding:8px 20px;border-left:3px solid #558875;backgrou
 <h3>已检查与待验证范围</h3>
 <ul>
 <li>ChatGPT 真实人物照片上传路径、双图风格参考与后续编辑；英文版目前只完成一次公开虚构源图的基本两阶段交互实测。</li>
-<li>项目主页已在 1280 px 桌面视口与 390 px 手机视口检查：六组案例在桌面为双列网格、手机为单列，页面无横向溢出，原图与结果尺寸相同。12 张案例图片在本地浏览器正常加载；试验记录可用键盘展开。核心内容不依赖 JavaScript。此前头像预览另在 390 CSS 像素 iframe 中检查过；这些不是实体手机测试。打印效果尚未查看。</li>
+<li>此前六案例版本的项目主页曾在 1280 px 桌面视口与 390 px 手机视口检查：六组案例在桌面为双列网格、手机为单列，页面无横向溢出，原图与结果尺寸相同。12 张案例图片在本地浏览器正常加载；试验记录可用键盘展开。核心内容不依赖 JavaScript。此前头像预览另在 390 CSS 像素 iframe 中检查过；这些不是实体手机测试。打印效果尚未查看。2026-09-24 新案例页面的四个 HTML 文件已通过静态解析检查：案例页各有 7 组、主页各展示 4 组，新增两张图均有路径与替代文本；本地浏览器打开页面被安全策略拒绝，本版尚无桌面和手机视觉复看。</li>
 <li>2026-09-23 英文页面发布后，GitHub Pages 对对应提交的构建状态为成功；线上中英文首页及两张新英文页与提交文件逐字节一致。使用 Codex 的 skill-installer 在临时目录从公开仓库安装成功，安装后预览脚本用仓库内虚构人物成片生成了内嵌图片的 HTML。首次安装因本机 Python 缺少可用的默认证书链失败；将 <code>SSL_CERT_FILE</code> 指向本机已有的 <code>certifi</code> 证书包后，同一安装脚本通过。这项检查只覆盖安装包与预览生成，不代表 skill 已在新对话自动调用或生成审美表现通过。新增英文页的本地链接与锚点已检查；Chrome 桌面视图中，英文案例页顶部和首两组图片在双列布局下正常显示，本次未完成手机宽度视觉复看。</li>
 <li>内嵌图像字节与相对路径已通过脚本测试，浏览器视觉检查使用本地 HTTP 页面。尝试打开 file:// 页面时原生浏览器自动化未完成导航，因此直接双击文件的离线显示尚未实测。</li>
 <li>独立真人审美评价，以及需要时的短 prompt 对照。</li>
