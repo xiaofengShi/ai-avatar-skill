@@ -26,7 +26,7 @@ Give one photo and its purpose — let AI act as designer and photographer for y
 
 The ChatGPT entry splits plan and generate into two messages so image requests do not skip purpose clarification. Without a stated purpose, the assistant is expected to ask first, then design. The Codex entry runs design and generation continuously once the purpose is clear. ChatGPT cannot read photos from local file paths — attach them in the conversation. Image generation, upload, and editing are provided by your account and current interface; this project does not provide generation quota. See the [official image usage guide](https://help.openai.com/en/articles/11084440).
 
-One logged-in Chrome trial of the English wording used the public fictional source photo: ChatGPT asked for the missing purpose, planned after the purpose and photo were supplied, and generated an image after the second instruction. The image remained largely photographic. The [validation log](VALIDATION.en.md) records the observations separately from earlier Chinese-prompt tests.
+One logged-in Chrome trial of the English wording used the public fictional source photo: ChatGPT asked for the missing purpose, planned after the purpose and photo were supplied, and generated an image after the second instruction. The image remained largely photographic. [Read the public ChatGPT conversation](https://chatgpt.com/share/6ab4816b-e47c-83ec-9a43-67fe93f1c7e1); the [validation log](VALIDATION.en.md) records the observations separately from earlier Chinese-prompt tests.
 
 <a id="codex"></a>
 
