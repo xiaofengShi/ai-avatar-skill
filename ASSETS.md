@@ -11,7 +11,7 @@
 - `examples/researcher/avatar.png`：同一虚构男性源照片与公共风格参考，按深色研究团队主页用途重新设计，2026-09-22 一次生成。
 - `examples/speaker-smile/avatar.png`：基于公开的 speaker/avatar.png 调整微笑与头部姿态，2026-09-22 一次编辑生成。首版后来因头身姿态不协调被用户否定，保留作为问题案例。
 - `examples/speaker-smile/avatar-v2.png`：收到反馈后，从原 speaker/avatar.png 与 speaker/source.png 重新调整头颈肩，追加一次修正生成；未使用私人照片，尚待用户确认。
-- `examples/studio-id-photo/source.png` 与 `portrait.png`：2026-09-24 由 Codex 内置图像工具分别生成虚构中国成年女性的普通源照片，以及以该照片为唯一人物参考的一张精致影棚证件照风格肖像。用户提出“海马体证件照”方向；本案例仅借用精致影棚照的视觉语言，未使用海马体样片、标志或服务，与该品牌无关联。成片用于简历／员工资料场景的演示，未核验任何正式证件或考试报名规格。
+- `examples/studio-id-photo/source.png` 与 `portrait.png`：2026-09-24 由 Codex 内置图像工具分别生成虚构中国成年女性的普通源照片，以及以该照片为唯一人物参考的一张精致影棚证件照风格肖像。用户提出“海马体证件照”方向，并指定[海马体官网](https://www.haimati.cn/#/)供今后参考；本案例仅借用精致影棚照的视觉语言，未使用海马体样片、标志或服务，与该品牌无关联。成片用于简历／员工资料场景的演示，未核验任何正式证件或考试报名规格。
 
 文件哈希、生成入口、参考图顺序和实际指令记录在 [manifest.json](examples/manifest.json)。工具没有公开的模型标识与 seed 记为 `null`。图像不会因记录相同 prompt 而保证逐像素重现。
 
